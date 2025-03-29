@@ -27,7 +27,7 @@
 
 <body class="">
 
-    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-80"style="background-image: url(assets/img/image1.svg);">
+    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-100"style="background-image: url(assets/img/image1.svg);">
 <!-- gggggg
   -->
         <!-- <div class=" pt-12 p-6 flex flex-col  -mt-48 "> -->
@@ -125,20 +125,27 @@
                 <hr class="w-full border-barre">
 
             </div>
-            <div class="flex flex-col gap-4 mt-4 hidden lg:block  lg:items-center">
-                <div class="flex justify-between pr-4 items-center hidden lg:block  lg:flex lg:items-center" style="color: #9495A5;">
-                    <div class=" flex gap-2 pl-2">
+            <div class="flex  justify-between px-3 gap-6 mt-4 lg:flex    lg:justify-between lg:items-center" style="color: #9495A5;">
+                <div class="block lg:hidden">
+                    <p>5 items left</p>
+                </div>
+
+                <div class="flex justify-between pr-4 items-center hidden lg:block  lg:flex lg:items-center lg:justify-between  lg:gap-4 " style="color: #9495A5;">
+                    <div class="lg:pl-2">
                         <p>5 items left</p>
                     </div>
-                    <div class="capitalize flex gap-4">
+                    <div class="capitalize">
                         <span>all</span>
                         <span>active</span>
                         <span>completed</span>
-                    </div>
-                    <div class=" flex gap-2 pl-2">
+                    </div> 
+                    <div class="lg:pr-2">
                         <p>clear completed</p>
                     </div>
 
+                </div>
+                <div class="block lg:hidden">
+                    <p>clear completed</p>
                 </div>
 
             </div>
