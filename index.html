@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T O D O</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --color-gris: #D1D2DA;
+            --color-noir: #494C6B;
+            --color-texte: #9495A5;
+            --color-blanc: #FFFFFF;
+            --font-josefin: "Josefin Sans";
+            --color-barre: #E3E4F1;
+            --color-page: #C2C3D680;
+            --color-bleu: #3A7CFD;
+        
+        }
+</style>
+</head>
+
+<body class="">
+
+    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover"
+        style="background-image: url(assets/img/image1.svg);">
+
+        <!-- <div class=" pt-12 p-6 flex flex-col  -mt-48 "> -->
+        <div class="w-full flex justify-between  z-10">
+            <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]">
+            <img src="assets/img/lune.svg" class="h-[18px] w-[18px]">
+        </div>
+
+        <div class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 ">
+            <!-- <input type="radio" class="w-[20px] h-[20px] mt-0.5"> -->
+            <div class="w-7 h-5 rounded-full border border-barre "></div>
+            <input type="text" class="w-96 h-5" placeholder="Create a new todo…" class="--font-josefin text-xs ">
+        </div>
+        <div class=" pt-4 w-full h-96 bg-white shadow-xl bg-page mt-6">
+            <!-- 1 -->
+            <div class="flex flex-col gap-4">
+                <div class="flex justify-between pr-4">
+                <div class=" flex gap-2 pl-2">
+                    <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                    <h1 class="text-gris text-sm font-josefin">Complete online JavaScript course</h1>
+                </div>
+                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+            </div>
+                <hr class="w-full border-barre">
+            </div>
+
+            <!-- 2 -->
+            <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between pr-4">
+                    <div class=" flex gap-2 pl-2">
+
+                        <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                        <h1 class="text-noir text-xs font-josefin">Jog around the park 3x</h1>
+                    </div>
+                    <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+                </div>
+                <hr class="w-full border-barre">
+            </div>
+
+            <!-- 3 -->
+            <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between pr-4">
+                <div class=" flex gap-2 pl-2">
+                    <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                    <h1 class="text-noir text-xs font-josefin">10 minutes meditation</h1>
+                </div>
+                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+            </div>
+                <hr class="w-full border-barre">
+            </div>
+            <!-- 4 -->
+           
+            <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between pr-4">
+                <div class=" flex gap-2 pl-2">
+                    <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                    <h1 class="text-noir text-xs font-josefin">Read for 1 hour</h1>
+                </div>
+                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+                </div>
+                <hr class="w-full border-barre">
+
+            </div>
+
+            <!-- 5 -->
+            <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between pr-4">
+                <div class=" flex gap-2 pl-2">
+                    <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                    <h1 class="text-noir text-xs font-josefin">Pick up groceries</h1>
+                </div>
+                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+                </div>
+                <hr class="w-full border-barre">
+
+            </div>
+
+
+            <!-- 6 -->
+            <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between pr-4">
+                <div class=" flex gap-2 pl-2">
+                    <div class="w-5 h-5 rounded-full border border-barre"></div>
+
+                    <h1 class="text-noir text-xs font-josefin">Complete Todo App on Frontend Mentor</h1>
+
+                </div>
+                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] mt-1">
+                </div>
+                <hr class="w-full border-barre">
+
+            </div>
+        </div>
+
+        <!--  -->
+        <div class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6">
+            <a href="#" class="text-bleu font-[700] text-sm font-josefin">All</a>
+            <a href="#" class="text-texte font-[700] text-sm font-josefin">Active</a>
+            <a href="#" class="text-texte font-[700] text-sm font-josefin">Completed</a>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <section class=" w-full h-[200px] bg-norepeat bg-cover" style="background-image: url(assets/img/image.svg);">
+        <div class=" w-full h-full bg-gradient-to-tr opacity-100 from-purple-700 to-blue-300"></div>
+
+        </section> 
+        <div class=" w-full h-full bg-gradiant-to-tr from-purple-700 to-blue-300"></div> -->
+
+
+    <!-- <img src="./assets/img/image.svg"
+            class=" w-full bg-gradient-to-tr from-purple-700 to-blue-300  "> -->
+
+
+
+    <!-- 
+        <div class=" pt-12 p-6 flex flex-col  -mt-48 ">
+            <div class="w-full flex justify-between  z-10">
+                <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]">
+                <img src="assets/img/lune.svg" class="h-[18px] w-[18px]">
+            </div>
+
+            <div class=" -ml-2 flex gap-2 mt-14 w-11/12 h-[48px] bg-white  rounded-[5px] p-3 ">
+                <input type="radio" class="w-[20px] h-[20px] mt-0.5">
+                <input type="text" class="w-96 h-5" placeholder="Create a new todo…" class="--font-josefin text-xs ">
+            </div> -->
+    <!-- tableau  -->
+    <!-- <section
+                class=" -ml-2 mt-30 w-11/12 h-96 bg-white rounded-[5px]  absolute z-10   shadow-xl bg-page p-6 rounded-[5px]">
+                <div class="flex flex-col gap-2">
+                    <div class="w-5 h-5 rounded-full border-barre border-1"></div>
+
+                    <hr class="border-barre mt-2 w-auto -ml-6">
+                </div>
+                <div class="w-5 h-5 rounded-full border-barre border-1"></div>
+
+                <hr class="border-barre mt-2 w-auto -ml-6">
+        </div>
+        <div class="w-5 h-5 rounded-full border-barre border-1">
+
+            <hr class="border-barre mt-2 w-auto -ml-6">
+        </div>
+        </div>
+
+         section3 
+        <div class="h-[48px] rounded-[5px] bg-white mt-96 shadow-lg bg-page "></div> 
+
+    </section>
+
+
+
+    </div>
+
+
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>
