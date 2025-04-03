@@ -28,18 +28,16 @@
 
 <body class="bg-blanc">
 
-    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-100"
-        style="background-image: url(assets/img/image1.svg);" id="hero-section">
-        <!-- gggggg
-  -->
+    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:flex lg:flex-col lg:justify-center  lg:items-center lg:pt-24" style="background-image: url(assets/img/image1.svg);" id="hero-section">
+        <!-- gggggg -->
         <!-- <div class=" pt-12 p-6 flex flex-col  -mt-48 "> -->
-        <div class="w-full flex justify-between  z-10 ">
+        <div class="w-full flex justify-between  z-10 lg:w-[36rem]  ">
             <!-- <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]"> -->
             <h1 class=" font-josefin font-[800]  text-[28px] text-white tracking-[10px]">TODO</h1>
             <img src="assets/img/lune.svg" class="h-[18px] w-[18px]" id="mode">
         </div>
 
-        <div  class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 " id="formulaire">
+        <div  class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 lg:w-[36rem] " id="formulaire">
 
             <div type="keydown" class="w-5 h-5 rounded-full border border-barre flex justify-center items-center " id="check">
                 <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
@@ -49,55 +47,56 @@
         </div>
 
         <!-- tableau -->
-        <section class="flex flex-col pt-4 w-full h-auto bg-white shadow-xl bg-page mt-6  rounded-[5px]" id="parent">
+        <section class="flex flex-col pt-4 w-full h-auto bg-white shadow-xl bg-page mt-6  rounded-[5px] lg:w-[36rem]" id="parent">
             <!-- 1 -->
-            <div class=" hidden flex flex-col gap-4 mt-2 " id="Element">
-                <div class="flex justify-between items-center pr-4" id="sousElement">
-                    <div class=" flex gap-2 pl-2">
-                        <div class="w-5 h-5 rounded-full border border-barre" id="check">
-                            <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
-                        </div>
+                <div class=" hidden flex flex-col gap-4 mt-2 " id="Element">
+                    <div class="flex justify-between items-center pr-4 " id="sousElement">
+                        <div class=" flex gap-2 pl-2">
+                            <div class="w-5 h-5 rounded-full border border-barre" id="check">
+                                <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
+                            </div>
 
-                        <h1 class="text-gris text-sm font-josefin" id="texte"></h1>
+                            <h1 class="text-gris text-sm font-josefin" id="texte"></h1>
+                        </div>
+                        <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] "/>
                     </div>
-                    <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] "/>
+                    <hr class="w-full border-barre">
                 </div>
-                <hr class="w-full border-barre">
-            </div>
 
                 <!-- partie suivante -->
-            <div class="flex  justify-between px-3 gap-6 mt-4 lg:flex    lg:justify-between lg:items-center"
-                style="color: #9495A5;" id="categorie">
-                <div class="block lg:hidden">
-                    <p>5 items left</p>
-                </div>
-
-                <div class="flex justify-between pr-4 items-center hidden lg:block  lg:flex lg:items-center lg:justify-between  lg:gap-4 "
-                    style="color: #9495A5;">
-                    <div class="lg:pl-2">
+                <div class="flex  justify-between px-3 gap-6 h-10 lg:flex    lg:justify-between lg:items-center block lg:hidden" style="color: #9495A5;" id="categorie">
+                    <div class="">
                         <p>5 items left</p>
                     </div>
-                    <div class="capitalize">
-                        <span>all</span>
-                        <span>active</span>
-                        <span>completed</span>
-                    </div>
-                    <div class="lg:pr-2">
+               
+                    <div class="">
                         <p>clear completed</p>
                     </div>
-
+    
+    
+               
                 </div>
-                <div class="block lg:hidden">
-                    <p>clear completed</p>
+                <div class="hidden lg:block lg:flex lg:justify-between lg:items-center lg:p-4" style="color: #9495A5;" id="categorie">
+                    <div class="">
+                        <p>5 items left</p>
+                    </div>
+                    <div class="lg:flex lg:gap-6 capitalize " >
+                        <p>all</p>
+                        <p>active</p>
+                        <p>completed</p>
+                    </div>
+                    <div class="capitalize">
+                        <p>clear completed</p>
+                    </div>
+    
+    
+               
                 </div>
-
-            </div>
 
         </section>
 
         <!--  -->
-        <div
-            class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  " id="foot">
+        <div class=" flex justify-center items-center h-12 gap-6 w-full  bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  " id="foot">
             <a href="#" class="text-bleu font-[700] text-sm font-josefin">All</a>
             <a href="#" class="text-texte font-[700] text-sm font-josefin">Active</a>
             <a href="#" class="text-texte font-[700] text-sm font-josefin">Completed</a>

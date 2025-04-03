@@ -14,7 +14,7 @@ mode.onclick = function () {
         mode.src = "./assets/img/soleil.svg";
         hero.style.backgroundImage = " url('./assets/img/image-dark.svg')";
         form.style.backgroundColor = "#25273D";
-        body.style.backgroundColor = "black"
+        body.style.backgroundColor = "#171823"
         input.style.color = " #4D5067"
         check.style.borderColor = " #4D5067"
         categorie.style.color = "#5B5E7E"
@@ -57,9 +57,9 @@ input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
 
     contenu = input.value;
-    if (contenu.lenght < 4) {
+    if (contenu.length < 4) {
         check.style.backgroundImage = "none";
-        alert('Chaine est tres courte')
+       
     } else {
         checkimg.style.display = "flex";
         check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
