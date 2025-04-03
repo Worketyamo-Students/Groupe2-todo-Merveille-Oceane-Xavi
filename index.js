@@ -49,7 +49,6 @@ let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
 
 
-
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
 
@@ -87,8 +86,14 @@ input.addEventListener('keydown', function (event) {
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "flex";
-          
-
+            
+            let div= document.getElementById('sousElement')
+            let croix = document.createElement('img')
+            croix.src =  "assets/img/croix.svg"
+            croix.id = "croix"
+            element.addEventListener("mouseover", (e) => {
+                croix.style.backgroundColor= "red"
+            })
 
         }
     }
