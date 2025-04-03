@@ -87,12 +87,18 @@ input.addEventListener('keydown', function (event) {
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "flex";
             
-            let div= document.getElementById('sousElement')
+            // le mouseover sur la croix
+            let div= newElement.querySelector("#sousElement")
             let croix = document.createElement('img')
             croix.src =  "assets/img/croix.svg"
             croix.id = "croix"
-            element.addEventListener("mouseover", (e) => {
-                croix.style.backgroundColor= "red"
+            croix.classList.add("cursor-pointer")
+            newElement.addEventListener("mouseover", () => {
+                div.appendChild(croix)
+            })
+            newElement.addEventListener("mouse", () => {
+                let sortie = newElement.querySelector("croix")
+                div.remove(sortie)
             })
 
         }
