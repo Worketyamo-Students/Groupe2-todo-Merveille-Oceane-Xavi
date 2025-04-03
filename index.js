@@ -18,7 +18,7 @@ mode.onclick = function () {
         input.style.color = " #4D5067"
         check.style.borderColor = " #4D5067"
         categorie.style.color = "#5B5E7E"
-        foot.style.color = "#5B5E7E";
+        foot.style.color = " #5B5E7E";
         foot.style.background = " #4D5067"
         //  categorie.style.background ="#25273D";
         parent.style.background = " #25273D";
@@ -26,6 +26,14 @@ mode.onclick = function () {
     } else {
         mode.src = "./assets/img/lune.svg";
         hero.style.backgroundImage = "url('./assets/img/image1.svg')";
+          body.style.backgroundColor = "white"
+          check.style.borderColor = "gris"
+          foot.style.background = " white"
+          form.style.backgroundColor = "white";
+          parent.style.background = " white";
+          foot.style.color = " #9495A5";
+         check.style.borderColor =" #9495A5 "
+            input.style.color = " #9495A5  "
     }
 
 }
@@ -54,7 +62,7 @@ input.addEventListener('keydown', function (event) {
         alert('Chaine est tres courte')
     } else {
         checkimg.style.display = "flex";
-        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0%, #A42395 100% )";
+        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
     }
     // ajout d'element
     if (event.key === "Enter") {
