@@ -7,6 +7,7 @@
     <title>T O D O</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/index.css">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
@@ -18,29 +19,29 @@
             --color-blanc: #FFFFFF;
             --font-josefin: "Josefin Sans";
             --color-barre: #E3E4F1;
-            --color-page: #C2C3D680;
+            --color-page: #C2C3D6;
             --color-bleu: #3A7CFD;
         
         }
 </style>
 </head>
 
-<body class="">
+<body class="bg-blanc">
 
     <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-100"
-        style="background-image: url(assets/img/image1.svg);">
+        style="background-image: url(assets/img/image1.svg);" id="hero-section">
         <!-- gggggg
   -->
         <!-- <div class=" pt-12 p-6 flex flex-col  -mt-48 "> -->
         <div class="w-full flex justify-between  z-10 ">
             <!-- <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]"> -->
             <h1 class=" font-josefin font-[800]  text-[28px] text-white tracking-[10px]">TODO</h1>
-            <img src="assets/img/lune.svg" class="h-[18px] w-[18px]">
+            <img src="assets/img/lune.svg" class="h-[18px] w-[18px]" id="mode">
         </div>
 
         <div  class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 " id="formulaire">
 
-            <div type="keydown" class="w-5 h-5 rounded-full border border-barre " id="check">
+            <div type="keydown" class="w-5 h-5 rounded-full border border-barre flex justify-center items-center " id="check">
                 <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
             </div>
             <input type="text" class="w-96 h-5 font-josefin text-xs" placeholder="Create a new todo…" id="input">
@@ -96,7 +97,7 @@
 
         <!--  -->
         <div
-            class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  ">
+            class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  " id="foot">
             <a href="#" class="text-bleu font-[700] text-sm font-josefin">All</a>
             <a href="#" class="text-texte font-[700] text-sm font-josefin">Active</a>
             <a href="#" class="text-texte font-[700] text-sm font-josefin">Completed</a>

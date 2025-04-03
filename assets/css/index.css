@@ -1,0 +1,22 @@
+:root {
+    --gris: #D1D2DA;
+    --noir: #494C6B;
+    --texte: #9495A5;
+    --blanc: #FFFFFF;
+    --font-josefin: "Josefin Sans";
+    --barre: #E3E4F1;
+    --page: #C2C3D6;
+    --bleu: #3A7CFD;
+
+}
+.dark-theme{
+    --gris: #4D5067;
+    --noir: #C8CBE7;
+    --texte: #767992;
+    --blanc: #000000;
+    --font-josefin: "Josefin Sans";
+    --barre: #E3E4F1;
+    --page: #25273D;
+    --bleu: #3A7CFD;
+ 
+}
