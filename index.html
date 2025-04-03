@@ -27,110 +27,52 @@
 
 <body class="">
 
-    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-100"style="background-image: url(assets/img/image1.svg);">
-<!-- gggggg
+    <section class="p-6 pt-12 w-full h-[210px] bg-norepeat bg-cover lg:px-100"
+        style="background-image: url(assets/img/image1.svg);">
+        <!-- gggggg
   -->
         <!-- <div class=" pt-12 p-6 flex flex-col  -mt-48 "> -->
         <div class="w-full flex justify-between  z-10 ">
-            <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]">
+            <!-- <img src="./assets/img/TODO.svg" class="h-[20px] w-[108px]"> -->
+            <h1 class=" font-josefin font-[800]  text-[28px] text-white tracking-[10px]">TODO</h1>
             <img src="assets/img/lune.svg" class="h-[18px] w-[18px]">
         </div>
 
-        <div class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 ">
-            <!-- <input type="radio" class="w-[20px] h-[20px] mt-0.5"> -->
-            <div class="w-5 h-5 rounded-full border border-barre "></div>
-            <input type="text" class="w-96 h-5" placeholder="Create a new todo…" class="--font-josefin text-xs ">
+        <div  class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 " id="formulaire">
+
+            <div type="keydown" class="w-5 h-5 rounded-full border border-barre " id="check">
+                <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
+            </div>
+            <input type="text" class="w-96 h-5 font-josefin text-xs" placeholder="Create a new todo…" id="input">
+
         </div>
-        <div class=" pt-4 w-full h-96 bg-white shadow-xl bg-page mt-6">
+
+        <!-- tableau -->
+        <section class="flex flex-col pt-4 w-full h-auto bg-white shadow-xl bg-page mt-6  rounded-[5px]" id="parent">
             <!-- 1 -->
-            <div class="flex flex-col gap-4">
-                <div class="flex justify-between items-center pr-4">
-                <div class=" flex gap-2 pl-2">
-                    <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                    <h1 class="text-gris text-sm font-josefin">Complete online JavaScript course</h1>
-                </div>
-                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
-            </div>
-                <hr class="w-full border-barre">
-            </div>
-
-            <!-- 2 -->
-            <div class="flex flex-col gap-4 mt-4">
-                <div class="flex justify-between items-center pr-4">
+            <div class=" hidden flex flex-col gap-4 mt-2 " id="Element">
+                <div class="flex justify-between items-center pr-4" id="sousElement">
                     <div class=" flex gap-2 pl-2">
+                        <div class="w-5 h-5 rounded-full border border-barre" id="check">
+                            <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
+                        </div>
 
-                        <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                        <h1 class="text-noir text-xs font-josefin">Jog around the park 3x</h1>
+                        <h1 class="text-gris text-sm font-josefin" id="texte"></h1>
                     </div>
-                    <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
+                    <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] "/>
                 </div>
                 <hr class="w-full border-barre">
             </div>
 
-            <!-- 3 -->
-            <div class="flex flex-col gap-4 mt-4">
-                <div class="flex justify-between pr-4 items-center">
-                <div class=" flex gap-2 pl-2">
-                    <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                    <h1 class="text-noir text-xs font-josefin">10 minutes meditation</h1>
-                </div>
-                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
-            </div>
-                <hr class="w-full border-barre">
-            </div>
-            <!-- 4 -->
-           
-            <div class="flex flex-col gap-4 mt-4">
-                <div class="flex justify-between items-center pr-4">
-                <div class=" flex gap-2 pl-2">
-                    <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                    <h1 class="text-noir text-xs font-josefin">Read for 1 hour</h1>
-                </div>
-                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
-                </div>
-                <hr class="w-full border-barre">
-
-            </div>
-
-            <!-- 5 -->
-            <div class="flex flex-col gap-4 mt-4">
-                <div class="flex justify-between items-center pr-4">
-                <div class=" flex gap-2 pl-2">
-                    <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                    <h1 class="text-noir text-xs font-josefin">Pick up groceries</h1>
-                </div>
-                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
-                </div>
-                <hr class="w-full border-barre">
-
-            </div>
-
-
-            <!-- 6 -->
-            <div class="flex flex-col gap-4 mt-4">
-                <div class="flex justify-between pr-4 items-center">
-                <div class=" flex gap-2 pl-2">
-                    <div class="w-5 h-5 rounded-full border border-barre"></div>
-
-                    <h1 class="text-noir text-xs font-josefin">Complete Todo App on Frontend Mentor</h1>
-
-                </div>
-                <img src="./assets/img/croix.svg" class="w-[12px] h-[12px] ">
-                </div>
-                <hr class="w-full border-barre">
-
-            </div>
-            <div class="flex  justify-between px-3 gap-6 mt-4 lg:flex    lg:justify-between lg:items-center" style="color: #9495A5;">
+                <!-- partie suivante -->
+            <div class="flex  justify-between px-3 gap-6 mt-4 lg:flex    lg:justify-between lg:items-center"
+                style="color: #9495A5;" id="categorie">
                 <div class="block lg:hidden">
                     <p>5 items left</p>
                 </div>
 
-                <div class="flex justify-between pr-4 items-center hidden lg:block  lg:flex lg:items-center lg:justify-between  lg:gap-4 " style="color: #9495A5;">
+                <div class="flex justify-between pr-4 items-center hidden lg:block  lg:flex lg:items-center lg:justify-between  lg:gap-4 "
+                    style="color: #9495A5;">
                     <div class="lg:pl-2">
                         <p>5 items left</p>
                     </div>
@@ -138,7 +80,7 @@
                         <span>all</span>
                         <span>active</span>
                         <span>completed</span>
-                    </div> 
+                    </div>
                     <div class="lg:pr-2">
                         <p>clear completed</p>
                     </div>
@@ -150,17 +92,18 @@
 
             </div>
 
-        </div>
+        </section>
 
         <!--  -->
-            <div class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  ">
-                <a href="#" class="text-bleu font-[700] text-sm font-josefin">All</a>
-                <a href="#" class="text-texte font-[700] text-sm font-josefin">Active</a>
-                <a href="#" class="text-texte font-[700] text-sm font-josefin">Completed</a>
-            </div>
+        <div
+            class=" flex justify-center items-center gap-6 w-full h-12 bg-white shadow-xl bg-page mt-6 lg:w-0 block lg:hidden  ">
+            <a href="#" class="text-bleu font-[700] text-sm font-josefin">All</a>
+            <a href="#" class="text-texte font-[700] text-sm font-josefin">Active</a>
+            <a href="#" class="text-texte font-[700] text-sm font-josefin">Completed</a>
+        </div>
     </section>
 
-
+    <script src="index.js"></script>
 </body>
 
 </html>
