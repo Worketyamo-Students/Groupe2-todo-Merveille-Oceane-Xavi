@@ -90,6 +90,8 @@ input.addEventListener('keydown', function (event) {
             
             // faire apparaitre le bouton delete "mouseover"
             let part = newElement.querySelector('#sousElement')
+            let select = part.querySelector('#selction')
+            let check1 = part.querySelector('#croix')
             let sup = document.createElement('img')
             sup.src="/assets/img/croix.svg"; sup.classList = "cursor-pointer" 
             newElement.addEventListener('mouseover', () =>{
@@ -103,6 +105,10 @@ input.addEventListener('keydown', function (event) {
             // pour disparaitre le delete 
             newElement.addEventListener('mouseleave', () =>{
                 part.removeChild(sup)
+            })
+            let active = true 
+            Selection.addEventListener('click', ()=>{
+                
             })
 
             //effacer le contenu de l'input
