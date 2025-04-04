@@ -50,6 +50,7 @@ let categorie = document.getElementById("categorie")
 let croix= document.getElementById('croix')
 let check1 = document.getElementById('check1')
 let checkimg1 = document.getElementById('checkimg1')
+let texte = document.getElementById('texte')
 
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
@@ -58,7 +59,7 @@ input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
 
     contenu = input.value;
-    if (contenu.length < 5) {
+    if (contenu.length < 4) {
         check.style.backgroundImage = "none";
         
     } else {
@@ -98,6 +99,7 @@ input.addEventListener('keydown', function (event) {
          input.value="";
         check.style.backgroundImage="none";
         parent.style.display="flex"
+        
           
         }else{
                 alert('Chaine est tres courte')
@@ -107,10 +109,12 @@ input.addEventListener('keydown', function (event) {
 })
 
 //cocher les elements
-  parent.addEventListener("click" ,(e)=> {
-    checkimg.style.display = "flex";
-    check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+  check1.addEventListener("click" ,(e)=> {
+    checkimg1.style.display = "flex";
+    check1.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+    texte.style.textDecoration ="line-through";
 
 
   })
 
+//   texte.style.textDecoration ="line-through";
