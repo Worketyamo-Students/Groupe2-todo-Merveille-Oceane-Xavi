@@ -47,7 +47,9 @@ let check = document.getElementById('check')
 let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
-
+let tableaux = document.getElementById('tableaux')
+let alltable = document.getElementById('allTable')
+alltable = []
 
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
@@ -87,6 +89,10 @@ input.addEventListener('keydown', function (event) {
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "flex";
             
+            //ajout des elements dans le tableau all
+            let table = alltable.push(contenu)
+            console.log(alltable)
+
             // le mouseover sur la croix
             let div= newElement.querySelector("#sousElement")
             let croix = document.createElement('img')
@@ -98,7 +104,6 @@ input.addEventListener('keydown', function (event) {
             })
             newElement.addEventListener("mouseleave", () => {
                 let sortie = newElement.querySelector("croix")
-                sortie.remove()
             })
 
         }
