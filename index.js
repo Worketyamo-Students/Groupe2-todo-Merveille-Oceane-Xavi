@@ -88,10 +88,16 @@ input.addEventListener('keydown', function (event) {
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "flex";
-            
+
             //ajout des elements dans le tableau all
+            function all(){
+                let table = alltable.push(contenu)
+                console.log(alltable)
+    
+            }
             let table = alltable.push(contenu)
             console.log(alltable)
+            
 
             // le mouseover sur la croix
             let div= newElement.querySelector("#sousElement")
@@ -112,4 +118,7 @@ input.addEventListener('keydown', function (event) {
 
         }
     }
+    alltable.addEventListener('click' , () => {
+        all()
+    })
 })
