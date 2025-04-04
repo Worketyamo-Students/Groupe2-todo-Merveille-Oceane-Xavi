@@ -48,7 +48,8 @@ let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
 let croix= document.getElementById('croix')
-
+let check1 = document.getElementById('check1')
+let checkimg1 = document.getElementById('checkimg1')
 
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
@@ -57,10 +58,10 @@ input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
 
     contenu = input.value;
-    if (contenu.lenght < 5) {
+    if (contenu.length < 5) {
         check.style.backgroundImage = "none";
-        alert('Chaine est tres courte')
-    } else if(contenu.length >=4) {
+        
+    } else {
         checkimg.style.display = "flex";
         check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
     }
@@ -98,17 +99,18 @@ input.addEventListener('keydown', function (event) {
         check.style.backgroundImage="none";
         parent.style.display="flex"
           
+        }else{
+                alert('Chaine est tres courte')
         }
     }
-})
-
-
-
-
-
-
-//
-parent.addEventListener( 'mouseleave' , function (e) {
-// croix.style.display="flex"
 
 })
+
+//cocher les elements
+  parent.addEventListener("click" ,(e)=> {
+    checkimg.style.display = "flex";
+    check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+
+
+  })
+
