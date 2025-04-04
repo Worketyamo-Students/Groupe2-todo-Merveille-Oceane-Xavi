@@ -47,7 +47,7 @@ let check = document.getElementById('check')
 let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
-
+let croix= document.getElementById('croix')
 
 
 let count = 0;  //compteur
@@ -57,7 +57,7 @@ input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
 
     contenu = input.value;
-    if (contenu.lenght < 4) {
+    if (contenu.lenght < 5) {
         check.style.backgroundImage = "none";
         alert('Chaine est tres courte')
     } else {
@@ -86,10 +86,27 @@ input.addEventListener('keydown', function (event) {
             }
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
-            checkimg.style.display = "flex";
+            checkimg.style.display = "none";
+            
+            //effacer le contenu de l'input
+         input.value="";
+    check.style.backgroundImage="none";
+    //checkimg.style.background="none";
+parent.style.display="flex"
           
 
 
         }
     }
+})
+
+
+
+
+
+
+//
+parent.addEventListener( 'mouseleave' , function (e) {
+croix.style.display="flex"
+
 })
