@@ -60,11 +60,11 @@ input.addEventListener('keydown', function (event) {
     if (contenu.lenght < 5) {
         check.style.backgroundImage = "none";
         alert('Chaine est tres courte')
-    } else {
+    } else if(contenu.length >=4) {
         checkimg.style.display = "flex";
         check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
     }
-    // ajout d'element
+    // ajout element
     if (event.key === "Enter") {
         let valeur = contenu;
         //condition d'arret
@@ -81,6 +81,7 @@ input.addEventListener('keydown', function (event) {
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex";
             let textElement = newElement.querySelector('#texte');
+            
             if (textElement) {
                 textElement.innerHTML = contenu;
             }
@@ -88,14 +89,15 @@ input.addEventListener('keydown', function (event) {
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "none";
             
+            //implementation de l'effet de survol
+            
+
+
             //effacer le contenu de l'input
          input.value="";
-    check.style.backgroundImage="none";
-    //checkimg.style.background="none";
-parent.style.display="flex"
+        check.style.backgroundImage="none";
+        parent.style.display="flex"
           
-
-
         }
     }
 })
@@ -107,6 +109,6 @@ parent.style.display="flex"
 
 //
 parent.addEventListener( 'mouseleave' , function (e) {
-croix.style.display="flex"
+// croix.style.display="flex"
 
 })
