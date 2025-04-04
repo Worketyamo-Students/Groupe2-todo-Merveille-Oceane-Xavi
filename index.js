@@ -88,6 +88,23 @@ input.addEventListener('keydown', function (event) {
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "none";
             
+            // faire apparaitre le bouton delete "mouseover"
+            let part = newElement.querySelector('#sousElement')
+            let sup = document.createElement('img')
+            sup.src="/assets/img/croix.svg"; sup.classList = "cursor-pointer" 
+            newElement.addEventListener('mouseover', () =>{
+                part.appendChild(sup)
+            })
+
+             // pour supprimer 
+            sup.addEventListener('click', () => {
+                parent.removeChild(newElement)
+            })
+            // pour disparaitre le delete 
+            newElement.addEventListener('mouseleave', () =>{
+                part.removeChild(sup)
+            })
+
             //effacer le contenu de l'input
          input.value="";
     check.style.backgroundImage="none";
@@ -106,7 +123,7 @@ parent.style.display="flex"
 
 
 //
-parent.addEventListener( 'mouseleave' , function (e) {
-croix.style.display="flex"
+// parent.addEventListener( 'mouseleave' , function (e) {
+// croix.style.display="flex"
 
-})
+// })
