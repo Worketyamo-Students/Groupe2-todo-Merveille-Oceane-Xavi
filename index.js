@@ -96,10 +96,14 @@ input.addEventListener('keydown', function (event) {
             newElement.addEventListener("mouseover", () => {
                 div.appendChild(croix)
             })
-            newElement.addEventListener("mouse", () => {
+            newElement.addEventListener("mouseleave", () => {
                 let sortie = newElement.querySelector("croix")
-                div.remove(sortie)
+                sortie.remove()
             })
+
+        }
+        else{
+            alert("entrer une chaine plus longue")
 
         }
     }
