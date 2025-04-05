@@ -172,7 +172,6 @@ input.addEventListener('keydown', function (event) {
                 }
                 
             })
-            active = !active
 
             //table actived
             table2.addEventListener('click', (a) => {
@@ -241,4 +240,3 @@ input.addEventListener('keydown', function (event) {
             //         texte.style.color = ""
             //     }
             // })
-
