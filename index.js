@@ -168,8 +168,9 @@ input.addEventListener('keydown', function (event) {
             alert('Chaine est tres courte')
         }
     }
-
 })
+
+
 
 //cocher les elements
 //   check1.addEventListener("click" ,(e)=> {
