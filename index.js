@@ -4,7 +4,7 @@ let hero = document.getElementById("hero-section")
 let form = document.getElementById("formulaire")
 let foot = document.getElementById("foot")
 let element = document.getElementById("Element")
-
+let items = document.getElementById('count')
 //implematation du dark mood
 let mode = document.getElementById("mode");
 mode.onclick = function () {
@@ -89,12 +89,8 @@ input.addEventListener('keydown', function (event) {
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "flex";
 
-            //ajout des elements dans le tableau all
-            function all(){
-                let table = alltable.push(contenu)
-                console.log(alltable)
-    
-            }
+            //ajout des elements dans le tableau all    
+        
             let table = alltable.push(contenu)
             console.log(alltable)
             
@@ -118,7 +114,4 @@ input.addEventListener('keydown', function (event) {
 
         }
     }
-    alltable.addEventListener('click' , () => {
-        all()
-    })
 })
