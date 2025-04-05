@@ -63,6 +63,7 @@ let table2 = document.getElementById("table2")
 let table3 = document.getElementById("table3")
 let alltable = document.getElementById("allTable")
 let compte=document.getElementById("compte")
+let compte1=document.getElementById("compte1")
 
 let category = document.getElementById("category")
 let count = 0;  //compteur
@@ -149,6 +150,8 @@ input.addEventListener('keydown', function (event) {
 
             //tableau all
             table1.addEventListener('click', (a) => {
+            
+            compte1.innerHTML= count +" "+ "items left"
                 let all = [''];
                 all = newElement.cloneNode(true);
 
