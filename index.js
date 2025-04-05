@@ -99,7 +99,48 @@ input.addEventListener('keydown', function (event) {
             }
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
-            checkimg.style.display = "none";
+            checkimg.style.display = "none"
+            
+            // faire apparaitre le bouton delete "mouseover"
+            let part = newElement.querySelector('#sousElement')
+            let select = part.querySelector('#select')
+            let check1 = part.querySelector('#checkimg1')
+            let sup = document.createElement('img')
+            sup.src="/assets/img/croix.svg"; sup.classList = "cursor-pointer" 
+            newElement.addEventListener('mouseover', () =>{
+                part.appendChild(sup)
+            })
+
+             // pour supprimer 
+            sup.addEventListener('click', () => {
+                parent.removeChild(newElement)
+            })
+            // pour disparaitre le delete 
+            newElement.addEventListener('mouseleave', () =>{
+                part.removeChild(sup)
+            })
+            // implementation des selections
+            let active = true 
+            select.addEventListener('click', () => {
+                if (active){
+                    select.style.background = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )" 
+                    check1.style.display = "flex" 
+                    textElement.style.textDecoration = "line-trough"
+                    textElement.style.color = "#D1D2DA"
+                }else {
+                    select.style.background = ""
+                    check1.style.display = "" 
+                    textElement.style.textDecoration = "" 
+                    textElement.style.color = "" 
+                }  
+            })
+            active = !active
+
+            //effacer le contenu de l'input
+         input.value="";
+    check.style.backgroundImage="none";
+    parent.style.display="flex"
+       
 
             //tableau all
             table1.addEventListener('click', (a) => {
@@ -115,17 +156,10 @@ input.addEventListener('keydown', function (event) {
                 // categorie.style.display="flex"
                 parent.style.display="none";
 
-                
-
+        
             })
             //implementation de l'effet de survol
 
-
-
-            //effacer le contenu de l'input
-            input.value = "";
-            check.style.backgroundImage = "none";
-            parent.style.display = "flex"
 
 
         } else {
@@ -142,5 +176,10 @@ input.addEventListener('keydown', function (event) {
 //     texte.style.textDecoration ="line-through";
 
 
+//
+// parent.addEventListener( 'mouseleave' , function (e) {
+// croix.style.display="flex"
+
+// }
 //   })
 
