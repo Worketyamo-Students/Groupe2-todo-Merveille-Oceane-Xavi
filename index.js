@@ -103,14 +103,15 @@ input.addEventListener('keydown', function (event) {
             
             // faire apparaitre le bouton delete "mouseover"
             let part = newElement.querySelector('#sousElement')
-            let select = part.querySelector('#select')
-            let check1 = part.querySelector('#checkimg1')
+
+            let choose = part.querySelector('#choose')
+            let checkI = part.querySelector('#checkimg2')
+            
             let sup = document.createElement('img')
             sup.src="/assets/img/croix.svg"; sup.classList = "cursor-pointer" 
             newElement.addEventListener('mouseover', () =>{
                 part.appendChild(sup)
             })
-
              // pour supprimer 
             sup.addEventListener('click', () => {
                 parent.removeChild(newElement)
@@ -121,15 +122,16 @@ input.addEventListener('keydown', function (event) {
             })
             // implementation des selections
             let active = true 
-            select.addEventListener('click', () => {
+            
+            choose.addEventListener('click', () => {
                 if (active){
-                    select.style.background = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )" 
-                    check1.style.display = "flex" 
-                    textElement.style.textDecoration = "line-trough"
+                    choose.style.background = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )" 
+                    checkI.style.display = "flex" 
+                    textElement.style.textDecoration = "line-through"
                     textElement.style.color = "#D1D2DA"
                 }else {
-                    select.style.background = ""
-                    check1.style.display = "" 
+                    choose.style.background = ""
+                    checkI.style.display = "" 
                     textElement.style.textDecoration = "" 
                     textElement.style.color = "" 
                 }  
@@ -137,10 +139,10 @@ input.addEventListener('keydown', function (event) {
             active = !active
 
             //effacer le contenu de l'input
-         input.value="";
-    check.style.backgroundImage="none";
-    parent.style.display="flex"
-       
+            input.value="";
+            check.style.backgroundImage="none";
+            parent.style.display="flex"
+            
 
             //tableau all
             table1.addEventListener('click', (a) => {
