@@ -13,27 +13,34 @@ mode.onclick = function () {
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "./assets/img/soleil.svg";
         hero.style.backgroundImage = " url('./assets/img/image-dark.svg')";
-        form.style.backgroundColor = "#25273D";
-        body.style.backgroundColor = "black"
+        form.style.backgroundColor = " #25273D";
+        body.style.backgroundColor = " #25273D"
         input.style.color = " #4D5067"
         check.style.borderColor = " #4D5067"
-        categorie.style.color = "#5B5E7E"
+        categorie.style.color = " #5B5E7E"
+        // categorie.style.backgroundColor=" #25273D"
         foot.style.color = " #5B5E7E";
-        foot.style.background = " #4D5067"
+        foot.style.background = "  #25273D"
         //  categorie.style.background ="#25273D";
         parent.style.background = " #25273D";
         element.style.color = " #C8CBE7";
+        alltable.style.background= " #25273D"
+        activetable.style.background=" #25273D"
     } else {
         mode.src = "./assets/img/lune.svg";
         hero.style.backgroundImage = "url('./assets/img/image1.svg')";
-          body.style.backgroundColor = "white"
-          check.style.borderColor = "gris"
-          foot.style.background = " white"
-          form.style.backgroundColor = "white";
-          parent.style.background = " white";
-          foot.style.color = " #9495A5";
-         check.style.borderColor =" #9495A5 "
-            input.style.color = " #9495A5  "
+        body.style.backgroundColor = "white"
+        check.style.borderColor = "gris"
+        foot.style.background = " white"
+        form.style.backgroundColor = "white";
+        parent.style.background = " white";
+        foot.style.color = " #9495A5";
+        check.style.borderColor = " #9495A5 "
+        input.style.color = " #9495A5  "
+        alltable.style.background= "white"
+        activetable.style.background="white"
+
+        
     }
 
 }
@@ -47,9 +54,14 @@ let check = document.getElementById('check')
 let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
-let croix= document.getElementById('croix')
+let croix = document.getElementById('croix')
+let check1 = document.getElementById('check1')
+let checkimg1 = document.getElementById('checkimg1')
+let texte = document.getElementById('texte')
+let table1 = document.getElementById("table1")
+let alltable= document.getElementById("allTable")
 
-
+let category = document.getElementById("category")
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
 
@@ -57,14 +69,14 @@ input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
 
     contenu = input.value;
-    if (contenu.lenght < 5) {
+    if (contenu.length < 4) {
         check.style.backgroundImage = "none";
-        alert('Chaine est tres courte')
+
     } else {
         checkimg.style.display = "flex";
-        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD , #A42395)";
     }
-    // ajout d'element
+    // ajout element
     if (event.key === "Enter") {
         let valeur = contenu;
         //condition d'arret
@@ -81,12 +93,13 @@ input.addEventListener('keydown', function (event) {
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex";
             let textElement = newElement.querySelector('#texte');
+
             if (textElement) {
                 textElement.innerHTML = contenu;
             }
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
-            checkimg.style.display = "none";
+            checkimg.style.display = "none"
             
             // faire apparaitre le bouton delete "mouseover"
             let part = newElement.querySelector('#sousElement')
@@ -127,18 +140,46 @@ input.addEventListener('keydown', function (event) {
          input.value="";
     check.style.backgroundImage="none";
     parent.style.display="flex"
-          
+       
+
+            //tableau all
+            table1.addEventListener('click', (a) => {
+                let all = [''];
+                all = newElement.cloneNode(true);
+                //all.push(element)
+                console.log(all)
+                alltable.appendChild(all)
+                category.style.display="flex"
+
+                 alltable.insertBefore(all, category);
+                alltable.style.display="flex"
+                // categorie.style.display="flex"
+                parent.style.display="none";
+
+        
+            })
+            //implementation de l'effet de survol
+
+
+
+        } else {
+            alert('Chaine est tres courte')
         }
     }
+
 })
 
-
-
-
+//cocher les elements
+//   check1.addEventListener("click" ,(e)=> {
+//     checkimg1.style.display = "flex";
+//     check1.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+//     texte.style.textDecoration ="line-through";
 
 
 //
 // parent.addEventListener( 'mouseleave' , function (e) {
 // croix.style.display="flex"
 
-// })
+// }
+//   })
+
