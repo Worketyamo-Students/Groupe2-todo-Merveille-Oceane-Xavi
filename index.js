@@ -35,6 +35,7 @@ mode.onclick = function () {
         foot.style.color = " #9495A5";
         check.style.borderColor = " #9495A5 "
         input.style.color = " #9495A5  "
+        alltable.style.background= "white"
         
     }
 
@@ -55,6 +56,7 @@ let checkimg1 = document.getElementById('checkimg1')
 let texte = document.getElementById('texte')
 let table1 = document.getElementById("table1")
 let alltable= document.getElementById("allTable")
+
 let category = document.getElementById("category")
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
