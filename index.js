@@ -126,11 +126,8 @@ input.addEventListener('keydown', function (event) {
             //effacer le contenu de l'input
          input.value="";
     check.style.backgroundImage="none";
-    //checkimg.style.background="none";
-parent.style.display="flex"
+    parent.style.display="flex"
           
-
-
         }
     }
 })
