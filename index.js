@@ -13,17 +13,19 @@ mode.onclick = function () {
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "./assets/img/soleil.svg";
         hero.style.backgroundImage = " url('./assets/img/image-dark.svg')";
-        form.style.backgroundColor = "#25273D";
-        body.style.backgroundColor = "black"
+        form.style.backgroundColor = " #25273D";
+        body.style.backgroundColor = " #25273D"
         input.style.color = " #4D5067"
         check.style.borderColor = " #4D5067"
-        categorie.style.color = "#5B5E7E"
+        categorie.style.color = " #5B5E7E"
+        // categorie.style.backgroundColor=" #25273D"
         foot.style.color = " #5B5E7E";
-        foot.style.background = " #4D5067"
+        foot.style.background = "  #25273D"
         //  categorie.style.background ="#25273D";
         parent.style.background = " #25273D";
         element.style.color = " #C8CBE7";
         alltable.style.background= " #25273D"
+        activetable.style.background=" #25273D"
     } else {
         mode.src = "./assets/img/lune.svg";
         hero.style.backgroundImage = "url('./assets/img/image1.svg')";
@@ -36,6 +38,8 @@ mode.onclick = function () {
         check.style.borderColor = " #9495A5 "
         input.style.color = " #9495A5  "
         alltable.style.background= "white"
+        activetable.style.background="white"
+
         
     }
 
@@ -110,6 +114,7 @@ input.addEventListener('keydown', function (event) {
                 alltable.style.display="flex"
                 // categorie.style.display="flex"
                 parent.style.display="none";
+
                 
 
             })
