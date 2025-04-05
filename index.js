@@ -25,7 +25,7 @@ mode.onclick = function () {
         parent.style.background = " #25273D";
         element.style.color = " #C8CBE7";
         alltable.style.background = " #25273D"
-        activetable.style.background = " #25273D"
+        completetable.style.background = " #25273D"
     } else {
         mode.src = "./assets/img/lune.svg";
         hero.style.backgroundImage = "url('./assets/img/image1.svg')";
@@ -38,16 +38,13 @@ mode.onclick = function () {
         check.style.borderColor = " #9495A5 "
         input.style.color = " #9495A5  "
         alltable.style.background = "white"
-        activetable.style.background = "white"
+        completetable.style.background = "white"
 
 
     }
 
 }
-
-
-
-
+//implementations des evenements
 
 let input = document.getElementById('input')
 let check = document.getElementById('check')
@@ -56,15 +53,17 @@ let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
 let croix = document.getElementById('croix')
 let check1 = document.getElementById('check1')
-//let checkimg1 = document.getElementById('checkimg1')
+
 let texte = document.getElementById('texte')
 let table1 = document.getElementById("table1")
 let table2 = document.getElementById("table2")
 let table3 = document.getElementById("table3")
 let alltable = document.getElementById("allTable")
+let alltable1 = document.getElementById("allTable1")
 let compte = document.getElementById("compte")
 let compte1 = document.getElementById("compte1")
 let select= document.getElementById("select")
+let suppr =document.getElementById("suppr")
 
 let category = document.getElementById("category")
 let count = 0;  //compteur
@@ -123,12 +122,14 @@ input.addEventListener('keydown', function (event) {
             // pour supprimer 
             sup.addEventListener('click', () => {
                 parent.removeChild(newElement)
+                count=count-1;
+                
             })
             // pour disparaitre le delete 
             newElement.addEventListener('mouseleave', () => {
                 part.removeChild(sup)
             })
-
+            
 
 
             //effacer le contenu de l'input
@@ -139,7 +140,7 @@ input.addEventListener('keydown', function (event) {
 
             //tableau all
             table1.addEventListener('click', (a) => {
-
+                
                 compte1.innerHTML = count + " " + "items left"
                 let all = [''];
                 all = newElement.cloneNode(true);
@@ -164,7 +165,32 @@ input.addEventListener('keydown', function (event) {
                     checki.style.display = "flex"
                     select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
                     textElement.style.textDecoration = "line-through";
-                }else if(!active){
+
+
+                     //table 
+                    table3.addEventListener('click', (a) => {
+                    table3.style.color=" #3A7CFD"
+                    table2.style.color=" #9495A5";
+                    table1.style.color=" #9495A5";
+                compte1.innerHTML = count + " " + "items left";
+                let completetable = [""]
+                
+                completetable = newElement.cloneNode(true);
+                console.log(completetable)
+                
+                category.style.display = "flex"
+                alltable.insertBefore(completetable, category);
+                alltable.appendChild()
+                completetable.removeChild(newElement)
+                // alltable.style.display="none"
+                
+
+                    })
+                    suppr.addEventListener("click", ()=>{
+                      alltable.removeChild(newElement);  
+                    })
+
+                 } else if(!active){
                     select.style.backgroundImage = "white"
                     checki.style.display = "none";
                     textElement.style.textDecoration = "none";
@@ -172,41 +198,70 @@ input.addEventListener('keydown', function (event) {
                 }
                 
             })
+            
 
             //table actived
-            table2.addEventListener('click', (a) => {
-                compte1.innerHTML = count + " " + "items left"
-                let activetable = []
-                activetable = newElement.cloneNode(true);
-                console.log(activetable)
-                alltable.appendChild(activetable)
-                category.style.display = "flex"
-                alltable.insertBefore(activetable, category);
-                alltable.style.display = "flex"
-                all = activetable
+            // table2.addEventListener('click', (a) => {
+            //     compte1.innerHTML = count + " " + "items left"
+            //     let completetable = [""]
+            //     completetable = newElement.cloneNode(true);
+            //     console.log(completetable)
+            //     alltable.appendChild(completetable)
+            //     category.style.display = "flex"
+            //     alltable.insertBefore(completetable, category);
+            //     alltable.style.display = "flex"
+            //     all = completetable
 
 
                 //suppression des coches
-                if (test) {
+            //     if (test) {
 
-                    alltable.removeChild(active)
+            //         alltable.removeChild(active)
 
-                }
+            //     }
 
-            })
+            // })
 
-            //table completed 
+            //table active
             table3.addEventListener("click", () => {
-
-                compte1.innerHTML = count + " " + "items left"
+                table2.style.color=" #3A7CFD"
+                table1.style.color=" #9495A5";
+                table3.style.color=" #9495A5";
+                //compte1.innerHTML = count + " " + "items left"
                 parent.style.display = "none";
-                if (test) {
-                    let completed = []
-                    alltable.appendChild(completed)
-                    completed = test;
-                }
+               alltable.style.display="flex";
+                    let activetable = []
+                    
+                    
+                 let T=select.addEventListener("click", (e) => {
+                        let active = true;
+                        let count1;
+                        if (active) {
+                            checki.style.display = "flex"
+                            select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+                            textElement.style.textDecoration = "line-through";
+                             count1=count1 + 1;
+                        }
+                       
+                    })
+                    activetable = newElement.cloneNode(true);
+                    if(T==true){
+                        parent.style.display="none";
+                   let tabletes=newElement;
 
+                    tabletes.splice()
+                        alltable.appendChild(activetable)
+                        alltable.insertBefore(activetable, category);
+                    }
+                   //let count2=count - count1
+                    compte1.innerHTML= count +" " +"items left";
+
+                    table1.addEventListener('click', (a) => {
+                        table3.split(table3.leng);
+                    })
             })
+
+            
 
         } else {
             alert('Chaine est tres courte')
@@ -240,3 +295,4 @@ input.addEventListener('keydown', function (event) {
             //         texte.style.color = ""
             //     }
             // })
+
