@@ -93,6 +93,7 @@ input.addEventListener('keydown', function (event) {
         
             let table = alltable.push(contenu)
             console.log(alltable)
+            alltable.appendChild(table)
             
 
             // le mouseover sur la croix
