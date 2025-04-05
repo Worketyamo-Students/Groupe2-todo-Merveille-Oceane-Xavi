@@ -106,6 +106,7 @@ input.addEventListener('keydown', function (event) {
             })
             newElement.addEventListener("mouseleave", () => {
                 let sortie = newElement.querySelector("croix")
+                div.removechild(sortie)
             })
 
         }
