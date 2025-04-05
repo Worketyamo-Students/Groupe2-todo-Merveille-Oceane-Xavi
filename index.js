@@ -56,14 +56,15 @@ let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
 let croix = document.getElementById('croix')
 let check1 = document.getElementById('check1')
-let checkimg1 = document.getElementById('checkimg1')
+//let checkimg1 = document.getElementById('checkimg1')
 let texte = document.getElementById('texte')
 let table1 = document.getElementById("table1")
 let table2 = document.getElementById("table2")
 let table3 = document.getElementById("table3")
 let alltable = document.getElementById("allTable")
-let compte=document.getElementById("compte")
-let compte1=document.getElementById("compte1")
+let compte = document.getElementById("compte")
+let compte1 = document.getElementById("compte1")
+let select= document.getElementById("select")
 
 let category = document.getElementById("category")
 let count = 0;  //compteur
@@ -92,13 +93,13 @@ input.addEventListener('keydown', function (event) {
         }
         //verification pour une longueur d'au moins 5 carateres
         if (contenu.length >= 5) {
-            parent.style.display = "flex"
+            parent.style.display = "flex";
             //clonage
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex";
             let textElement = newElement.querySelector('#texte');
             count = count + 1;
-            compte.innerHTML= count +" "+ "items left"
+            compte.innerHTML = count + " " + "items left"
             console.log(count)
             if (textElement) {
                 textElement.innerHTML = contenu;
@@ -109,8 +110,10 @@ input.addEventListener('keydown', function (event) {
 
             // faire apparaitre le bouton delete "mouseover"
             let part = newElement.querySelector('#sousElement')
+
             let select = part.querySelector('#select')
-            let check1 = part.querySelector('#checkimg1')
+            let checki = part.querySelector('#checkimg1')
+
             let sup = document.createElement('img')
             sup.src = "/assets/img/croix.svg"; sup.classList = "cursor-pointer"
             newElement.addEventListener('mouseover', () => {
@@ -125,22 +128,8 @@ input.addEventListener('keydown', function (event) {
             newElement.addEventListener('mouseleave', () => {
                 part.removeChild(sup)
             })
-            // implementation des selections
-            let active = true
-            select.addEventListener('click', () => {
-                if (active) {
-                    select.style.background = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )"
-                    check1.style.display = "flex"
-                    textElement.style.textDecoration = "line-trough"
-                    textElement.style.color = "#D1D2DA"
-                } else {
-                    select.style.background = ""
-                    check1.style.display = ""
-                    textElement.style.textDecoration = ""
-                    textElement.style.color = ""
-                }
-            })
-            active = !active
+
+
 
             //effacer le contenu de l'input
             input.value = "";
@@ -150,8 +139,8 @@ input.addEventListener('keydown', function (event) {
 
             //tableau all
             table1.addEventListener('click', (a) => {
-            
-            compte1.innerHTML= count +" "+ "items left"
+
+                compte1.innerHTML = count + " " + "items left"
                 let all = [''];
                 all = newElement.cloneNode(true);
 
@@ -161,7 +150,6 @@ input.addEventListener('keydown', function (event) {
 
                 alltable.insertBefore(all, category);
                 alltable.style.display = "flex"
-
                 parent.style.display = "none";
 
 
@@ -169,15 +157,26 @@ input.addEventListener('keydown', function (event) {
 
 
             //cocher les elements
-        
+           
             select.addEventListener("click", (e) => {
-                checkimg1.style.backgroundImage = "url('./assets/img/vrai.svg')";
-                select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
-                texte.style.textDecoration = "line-through";
+                let active = true;
+                if (active) {
+                    checki.style.display = "flex"
+                    select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+                    textElement.style.textDecoration = "line-through";
+                }else if(!active){
+                    select.style.backgroundImage = "white"
+                    checki.style.display = "none";
+                    textElement.style.textDecoration = "none";
+                    textElement.style.color = "";
+                }
+                
             })
+            active = !active
 
             //table actived
             table2.addEventListener('click', (a) => {
+                compte1.innerHTML = count + " " + "items left"
                 let activetable = []
                 activetable = newElement.cloneNode(true);
                 console.log(activetable)
@@ -185,8 +184,8 @@ input.addEventListener('keydown', function (event) {
                 category.style.display = "flex"
                 alltable.insertBefore(activetable, category);
                 alltable.style.display = "flex"
-                 all =activetable
-               
+                all = activetable
+
 
                 //suppression des coches
                 if (test) {
@@ -199,6 +198,8 @@ input.addEventListener('keydown', function (event) {
 
             //table completed 
             table3.addEventListener("click", () => {
+
+                compte1.innerHTML = count + " " + "items left"
                 parent.style.display = "none";
                 if (test) {
                     let completed = []
@@ -208,25 +209,6 @@ input.addEventListener('keydown', function (event) {
 
             })
 
-
-
-            //decocher les elements
-            //      select.addEventListener("click" ,(e)=> {
-            //      checkimg.style.display = "none";
-            //      select.style.backgroundImage ="none";
-            //      texte.style.textDecoration ="none";
-
-            //  })
-
-            // parent.addEventListener( 'mouseleave' , function (e) {
-            // croix.style.display="flex"
-
-            // }
-
-
-
-
-
         } else {
             alert('Chaine est tres courte')
         }
@@ -235,4 +217,28 @@ input.addEventListener('keydown', function (event) {
 })
 
 
+
+            // implementation des selections
+
+
+
+            
+            // select.addEventListener("click", (e) => {
+
+
+            //     checkimg1.style.backgroundImage = "url('./assets/img/vrai.svg')";
+            //     select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+            //     texte.style.textDecoration = "line-through";
+            //         // select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )"
+            //         // // select.style.display = "flex"
+            //         // checkimg1.style.backgroundImage = "url('./assets/img/vrai.svg')";
+            //         // texte.style.textDecoration = "line-through"
+            //         // texte.style.color = "#D1D2DA"
+            //     if(active===false){
+            //         select.style.background = ""
+            //         check1.style.display = ""
+            //         texte.style.textDecoration = ""
+            //         texte.style.color = ""
+            //     }
+            // })
 
