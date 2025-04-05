@@ -55,7 +55,7 @@ let checkimg1 = document.getElementById('checkimg1')
 let texte = document.getElementById('texte')
 let table1 = document.getElementById("table1")
 let alltable= document.getElementById("allTable")
-
+let category = document.getElementById("category")
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
 
@@ -102,11 +102,13 @@ input.addEventListener('keydown', function (event) {
                 //all.push(element)
                 console.log(all)
                 alltable.appendChild(all)
-                // alltable.insertBefore(all, categorie);
+                category.style.display="flex"
+
+                 alltable.insertBefore(all, category);
                 alltable.style.display="flex"
                 // categorie.style.display="flex"
-                parent.style.display="none"
-
+                parent.style.display="none";
+                
 
             })
             //implementation de l'effet de survol
