@@ -23,17 +23,19 @@ mode.onclick = function () {
         //  categorie.style.background ="#25273D";
         parent.style.background = " #25273D";
         element.style.color = " #C8CBE7";
+        alltable.style.background= " #25273D"
     } else {
         mode.src = "./assets/img/lune.svg";
         hero.style.backgroundImage = "url('./assets/img/image1.svg')";
-          body.style.backgroundColor = "white"
-          check.style.borderColor = "gris"
-          foot.style.background = " white"
-          form.style.backgroundColor = "white";
-          parent.style.background = " white";
-          foot.style.color = " #9495A5";
-         check.style.borderColor =" #9495A5 "
-            input.style.color = " #9495A5  "
+        body.style.backgroundColor = "white"
+        check.style.borderColor = "gris"
+        foot.style.background = " white"
+        form.style.backgroundColor = "white";
+        parent.style.background = " white";
+        foot.style.color = " #9495A5";
+        check.style.borderColor = " #9495A5 "
+        input.style.color = " #9495A5  "
+        
     }
 
 }
@@ -47,10 +49,12 @@ let check = document.getElementById('check')
 let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 let categorie = document.getElementById("categorie")
-let croix= document.getElementById('croix')
+let croix = document.getElementById('croix')
 let check1 = document.getElementById('check1')
 let checkimg1 = document.getElementById('checkimg1')
 let texte = document.getElementById('texte')
+let table1 = document.getElementById("table1")
+let alltable= document.getElementById("allTable")
 
 let count = 0;  //compteur
 const maxElement = 5; //max d'elements
@@ -61,10 +65,10 @@ input.addEventListener('keydown', function (event) {
     contenu = input.value;
     if (contenu.length < 4) {
         check.style.backgroundImage = "none";
-        
+
     } else {
         checkimg.style.display = "flex";
-        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+        check.style.backgroundImage = "linear-gradient(to bottom, #3710BD , #A42395)";
     }
     // ajout element
     if (event.key === "Enter") {
@@ -83,38 +87,51 @@ input.addEventListener('keydown', function (event) {
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex";
             let textElement = newElement.querySelector('#texte');
-            
+
             if (textElement) {
                 textElement.innerHTML = contenu;
             }
             parent.appendChild(newElement);//ajout de l'element dans le tableau
             parent.insertBefore(newElement, categorie);
             checkimg.style.display = "none";
-            
+
+            //tableau all
+            table1.addEventListener('click', (a) => {
+                let all = [''];
+                all = newElement.cloneNode(true);
+                //all.push(element)
+                console.log(all)
+                alltable.appendChild(all)
+                // alltable.insertBefore(all, categorie);
+                alltable.style.display="flex"
+                // categorie.style.display="flex"
+                parent.style.display="none"
+
+
+            })
             //implementation de l'effet de survol
-            
+
 
 
             //effacer le contenu de l'input
-         input.value="";
-        check.style.backgroundImage="none";
-        parent.style.display="flex"
-        
-          
-        }else{
-                alert('Chaine est tres courte')
+            input.value = "";
+            check.style.backgroundImage = "none";
+            parent.style.display = "flex"
+
+
+        } else {
+            alert('Chaine est tres courte')
         }
     }
 
 })
 
 //cocher les elements
-  check1.addEventListener("click" ,(e)=> {
-    checkimg1.style.display = "flex";
-    check1.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
-    texte.style.textDecoration ="line-through";
+//   check1.addEventListener("click" ,(e)=> {
+//     checkimg1.style.display = "flex";
+//     check1.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+//     texte.style.textDecoration ="line-through";
 
 
-  })
+//   })
 
-//   texte.style.textDecoration ="line-through";
