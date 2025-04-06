@@ -139,11 +139,10 @@ input.addEventListener('keydown', function (event) {
 
 
             //tableau all
-            table1.addEventListener('click', (a) => {
-                
+            table1.addEventListener('click', () => {
+                if (!alltable.contains(newElement)) {
                 compte1.innerHTML = count + " " + "items left"
-                let all = [''];
-                all = newElement.cloneNode(true);
+                let all = newElement.cloneNode(true);
 
                 console.log(all)
                 alltable.appendChild(all)
@@ -152,54 +151,61 @@ input.addEventListener('keydown', function (event) {
                 alltable.insertBefore(all, category);
                 alltable.style.display = "flex"
                 parent.style.display = "none";
-
+                }
 
             })
-
+        
 
             //cocher les elements
            
+            let active = false;  // Variable pour gérer l'état actif (sélectionné ou non)
+
             select.addEventListener("click", (e) => {
-                let active = true;
-                if (active) {
-                    checki.style.display = "flex"
-                    select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
-                    textElement.style.textDecoration = "line-through";
-
-
-                     //table 
-                    table3.addEventListener('click', (a) => {
-                    table3.style.color=" #3A7CFD"
-                    table2.style.color=" #9495A5";
-                    table1.style.color=" #9495A5";
-                compte1.innerHTML = count + " " + "items left";
-                let completetable = [""]
-                
-                completetable = newElement.cloneNode(true);
-                console.log(completetable)
-                
-                category.style.display = "flex"
-                alltable.insertBefore(completetable, category);
-                alltable.appendChild()
-                completetable.removeChild(newElement)
-                // alltable.style.display="none"
-                
-
-                    })
-                    suppr.addEventListener("click", ()=>{
-                      alltable.removeChild(newElement);  
-                    })
-
-                 } else if(!active){
-                    select.style.backgroundImage = "white"
-                    checki.style.display = "none";
-                    textElement.style.textDecoration = "none";
-                    textElement.style.color = "";
-                }
-                
-            })
+                // Alterner l'état entre "coché" et "décoché"
+                active = !active;  // Inverse l'état à chaque clic
             
-
+                if (active) {
+                    // Lors du clic, l'élément devient sélectionné
+                    checki.style.display = "flex";  // Afficher l'icône de coche
+                    select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100%)";  // Changer le fond du bouton
+                    textElement.style.textDecoration = "line-through";  // Barrer le texte
+                    textElement.style.color = "#B0B0B0";  // Change la couleur du texte pour un aspect "complété"
+                } else {
+                    // Lors du clic, l'élément devient désélectionné
+                    checki.style.display = "none";  // Masquer l'icône de coche
+                    select.style.backgroundImage = "none";  // Réinitialiser le fond du bouton
+                    textElement.style.textDecoration = "none";  // Retirer le barré du texte
+                    textElement.style.color = "";  // Réinitialiser la couleur du texte
+                }
+            
+                // Ajout à "table3" quand sélectionné
+                table3.addEventListener('click', (a) => {
+                    // Changer les couleurs des tables lors du clic
+                    table3.style.color = "#3A7CFD";
+                    table2.style.color = "#9495A5";
+                    table1.style.color = "#9495A5";
+            
+                    // Mettre à jour le nombre d'items
+                    compte1.innerHTML = count + " " + "items left";
+            
+                    // Clone l'élément sélectionné et l'ajoute au tableau complet
+                    let completetable = newElement.cloneNode(true);
+                    console.log(completetable);
+            
+                    // Ajouter l'élément cloné à la table
+                    category.style.display = "flex";
+                    alltable.insertBefore(completetable, category);
+                    alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
+            
+                    // Option pour supprimer l'élément cloné
+                    let suppr = completetable.querySelector(".suppr");
+                    suppr.addEventListener("click", () => {
+                        alltable.removeChild(completetable);  // Supprimer l'élément du tableau
+                    });
+                });
+            });
+            
+    
             //table actived
             // table2.addEventListener('click', (a) => {
             //     compte1.innerHTML = count + " " + "items left"
