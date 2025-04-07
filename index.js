@@ -67,7 +67,7 @@ let suppr =document.getElementById("suppr")
 
 let category = document.getElementById("category")
 let count = 0;  //compteur
-const maxElement = 5; //max d'elements
+const maxElement = 8; //max d'elements
 
 input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
@@ -99,6 +99,8 @@ input.addEventListener('keydown', function (event) {
             let textElement = newElement.querySelector('#texte');
             count = count + 1;
             compte.innerHTML = count + " " + "items left"
+            alltable.style.display="none"
+
             console.log(count)
             if (textElement) {
                 textElement.innerHTML = contenu;
@@ -161,13 +163,13 @@ table1.addEventListener('click', () => {
     // Afficher la catégorie (si nécessaire)
     category.style.display = "flex";
 
-    // Insérer le clone avant l'élément de catégorie (si nécessaire)
+    // Insérer le clone avant l'élément de catégorie 
     alltable.insertBefore(all, category);
 
-    // Afficher le tableau et masquer le parent si nécessaire
+    // Afficher le tableau et masquer le parent 
     alltable.style.display = "flex";
     parent.style.display = "none";
-
+    //completetable.style.display="none"
     // Mettre à jour la référence du dernier clone
     previousClone = all;
 });
