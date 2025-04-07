@@ -139,22 +139,38 @@ input.addEventListener('keydown', function (event) {
 
 
             //tableau all
-            table1.addEventListener('click', () => {
-                if (!alltable.contains(newElement)) {
-                compte1.innerHTML = count + " " + "items left"
-                let all = newElement.cloneNode(true);
+            let previousClone = null; // Variable pour garder la référence du dernier clone
 
-                console.log(all)
-                alltable.appendChild(all)
-                category.style.display = "flex"
+table1.addEventListener('click', () => {
+    // Si un clone précédent existe, on le supprime
+    if (previousClone !== null) {
+        previousClone.remove();
+    }
 
-                alltable.insertBefore(all, category);
-                alltable.style.display = "flex"
-                parent.style.display = "none";
-                }
+    // Mise à jour de l'affichage du nombre d'éléments restants
+    compte1.innerHTML = count + " " + "items left";
+    
+    // Cloner l'élément
+    let all = newElement.cloneNode(true); // Clonage de l'élément avec ses enfants
 
-            })
-        
+    console.log(all);
+
+    // Ajouter le clone au tableau ou conteneur
+    alltable.appendChild(all);
+    
+    // Afficher la catégorie (si nécessaire)
+    category.style.display = "flex";
+
+    // Insérer le clone avant l'élément de catégorie (si nécessaire)
+    alltable.insertBefore(all, category);
+
+    // Afficher le tableau et masquer le parent si nécessaire
+    alltable.style.display = "flex";
+    parent.style.display = "none";
+
+    // Mettre à jour la référence du dernier clone
+    previousClone = all;
+});
 
             //cocher les elements
            
