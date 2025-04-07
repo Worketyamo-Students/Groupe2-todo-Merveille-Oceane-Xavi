@@ -68,9 +68,9 @@ let suppr =document.getElementById("suppr")
 let category = document.getElementById("category")
 let count = 0;  //compteur
 const maxElement = 8; //max d'elements
-let all=document.getElementById("all")
-let activetable =document.getElementById("activetable")
-let completetable = document.getElementById("completetable")
+// let all=document.getElementById("all")
+// let activetable =document.getElementById("activetable")
+// let completetable = document.getElementById("completetable")
 
 input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
