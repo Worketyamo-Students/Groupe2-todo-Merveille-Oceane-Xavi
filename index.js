@@ -68,6 +68,9 @@ let suppr =document.getElementById("suppr")
 let category = document.getElementById("category")
 let count = 0;  //compteur
 const maxElement = 8; //max d'elements
+let all=document.getElementById("all")
+let activetable =document.getElementById("activetable")
+let completetable = document.getElementById("completetable")
 
 input.addEventListener('keydown', function (event) {
     //ajouter un background a la div lorsque le quota est atteint
@@ -198,6 +201,13 @@ table1.addEventListener('click', () => {
             
                 // Ajout à "table3" quand sélectionné
                 table3.addEventListener('click', (a) => {
+
+                        // Si un clone précédent existe, on le supprime
+            if (previousClone !== null) {
+                 previousClone.remove();
+             }
+             parent.style.display = "none";
+             alltable.style.display="flex";
                     // Changer les couleurs des tables lors du clic
                     table3.style.color = "#3A7CFD";
                     table2.style.color = "#9495A5";
@@ -219,11 +229,62 @@ table1.addEventListener('click', () => {
                     let suppr = completetable.querySelector(".suppr");
                     suppr.addEventListener("click", () => {
                         alltable.removeChild(completetable);  // Supprimer l'élément du tableau
+                        
                     });
-                });
+                    
+
+                        // Afficher le tableau et masquer le parent 
+                alltable.style.display = "flex";
+                 parent.style.display = "none";
+                 //completetable.style.display="none"
+                 // Mettre à jour la référence du dernier clone
+                previousClone = all;
+                 });
             });
             
-    
+    /////////////////////////////////////////////////////////////////
+            //table active
+            table2.addEventListener("click", () => {
+                table2.style.color=" #3A7CFD"
+                table1.style.color=" #9495A5";
+                table3.style.color=" #9495A5";
+                //compte1.innerHTML = count + " " + "items left"
+                parent.style.display = "none";
+               alltable.style.display="flex";
+               completetable.style.display="none"
+               
+                    let activetable = []
+                    
+                    
+                //  let T=select.addEventListener("click", (e) => {
+                //         let active = true;
+                //         let count1;
+                //         if (active) {
+                //             checki.style.display = "flex"
+                //             select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
+                //             textElement.style.textDecoration = "line-through";
+                //              count1=count1 + 1;
+                //         }
+                       
+                //     })
+                //     activetable = newElement.cloneNode(true);
+                //     if(T==true){
+                //         parent.style.display="none";
+                //    let tabletes=newElement;
+
+                //     tabletes.splice()
+                //         alltable.appendChild(activetable)
+                //         alltable.insertBefore(activetable, category);
+                //     }
+                //    //let count2=count - count1
+                //     compte1.innerHTML= count +" " +"items left";
+
+                //     table1.addEventListener('click', (a) => {
+                //         table3.split(table3.leng);
+                //     })
+            })
+
+            
             //table actived
             // table2.addEventListener('click', (a) => {
             //     compte1.innerHTML = count + " " + "items left"
@@ -246,46 +307,6 @@ table1.addEventListener('click', () => {
 
             // })
 
-            //table active
-            table3.addEventListener("click", () => {
-                table2.style.color=" #3A7CFD"
-                table1.style.color=" #9495A5";
-                table3.style.color=" #9495A5";
-                //compte1.innerHTML = count + " " + "items left"
-                parent.style.display = "none";
-               alltable.style.display="flex";
-                    let activetable = []
-                    
-                    
-                 let T=select.addEventListener("click", (e) => {
-                        let active = true;
-                        let count1;
-                        if (active) {
-                            checki.style.display = "flex"
-                            select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
-                            textElement.style.textDecoration = "line-through";
-                             count1=count1 + 1;
-                        }
-                       
-                    })
-                    activetable = newElement.cloneNode(true);
-                    if(T==true){
-                        parent.style.display="none";
-                   let tabletes=newElement;
-
-                    tabletes.splice()
-                        alltable.appendChild(activetable)
-                        alltable.insertBefore(activetable, category);
-                    }
-                   //let count2=count - count1
-                    compte1.innerHTML= count +" " +"items left";
-
-                    table1.addEventListener('click', (a) => {
-                        table3.split(table3.leng);
-                    })
-            })
-
-            
 
         } else {
             alert('Chaine est tres courte')
@@ -296,27 +317,4 @@ table1.addEventListener('click', () => {
 
 
 
-            // implementation des selections
-
-
-
             
-            // select.addEventListener("click", (e) => {
-
-
-            //     checkimg1.style.backgroundImage = "url('./assets/img/vrai.svg')";
-            //     select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )";
-            //     texte.style.textDecoration = "line-through";
-            //         // select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100% )"
-            //         // // select.style.display = "flex"
-            //         // checkimg1.style.backgroundImage = "url('./assets/img/vrai.svg')";
-            //         // texte.style.textDecoration = "line-through"
-            //         // texte.style.color = "#D1D2DA"
-            //     if(active===false){
-            //         select.style.background = ""
-            //         check1.style.display = ""
-            //         texte.style.textDecoration = ""
-            //         texte.style.color = ""
-            //     }
-            // })
-
