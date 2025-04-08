@@ -69,8 +69,8 @@ let category = document.getElementById("category")
 let suppression= document.getElementById("suppression")
 let suppression2= document.getElementById("suppression2")
 let all=document.getElementById("all")
-
-let activetable=[]
+let completetable=document.getElementById("completetable")
+let activetable=document.getElementById("activetable")
 let count = 0;  //compteur
 const maxElement = 8; //max d'elements
 // let all=document.getElementById("all")
@@ -219,6 +219,7 @@ input.addEventListener('keydown', function (event) {
                       parent.style.display="none";
                      alltable.style.display="flex";
                      all.style.display="none";
+                     activetable.style.display="none"
                      // Changer les couleurs des tables lors du clic
                      table3.style.color = "#3A7CFD";
                      table2.style.color = "#9495A5";
@@ -240,14 +241,11 @@ input.addEventListener('keydown', function (event) {
                      table3.addEventListener("click" ,function(){
  
                          alltable.removeChild(completetable)
-                         for(let i=0;i<all.length;i++){
-                         alltable.removeChild(all)
-                         }
+                        
  
                      })
  
-                     
-                     
+                     ///clear completed
                      suppression.addEventListener("click", function() {
                          // Sélectionner toutes les cases à cocher
                          let checkboxes = document.querySelectorAll('.select'); 
@@ -286,7 +284,7 @@ input.addEventListener('keydown', function (event) {
                 let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
                 
                 // Crée un tableau pour les éléments non cochés
-                let activetable = [];
+                
             
                 checkboxe.forEach(checkbox => {
                     if (!checkbox.checked) {
