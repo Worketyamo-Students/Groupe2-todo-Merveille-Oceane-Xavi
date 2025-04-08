@@ -240,30 +240,23 @@ input.addEventListener('keydown', function (event) {
                      table3.addEventListener("click" ,function(){
  
                          alltable.removeChild(completetable)
+                         for(let i=0;i<all.length;i++){
                          alltable.removeChild(all)
-                         alltable.removeChild(all)
+                         }
  
                      })
  
-                     // Option pour supprimer l'élément cloné
-                     let suppr = completetable.querySelector(".suppr");
-                     suppr.addEventListener("click", () => {
-                         alltable.removeChild(completetable);  // Supprimer l'élément du tableau
-                         
- 
                      
-                     });
- 
                      
                      suppression.addEventListener("click", function() {
                          // Sélectionner toutes les cases à cocher
-                         let checkboxes = document.querySelectorAll('.select'); // Assurez-vous que les éléments à vérifier ont la classe "checkbox"
+                         let checkboxes = document.querySelectorAll('.select'); 
                      
                          // Boucle à travers toutes les cases à cocher
                          checkboxes.forEach(checkbox => {
                              if (checkbox.checked) {
                                  // Si la case est cochée, on supprime l'élément parent
-                                 let elementToRemove = checkbox.closest('.Element'); // Assurez-vous que '.item' est l'élément à supprimer
+                                 let elementToRemove = checkbox.closest('.Element'); 
                                  if (elementToRemove) {
                                      elementToRemove.remove(); // Supprime l'élément
                                  }
@@ -274,6 +267,47 @@ input.addEventListener('keydown', function (event) {
 
                  previousClone = completetable;
                   });
+
+        /////////////////////////////////////////////////////////////////
+            //table active
+          
+            table2.addEventListener("click", () => {
+                // Change la couleur des tables
+                table2.style.color = "#3A7CFD";
+                table1.style.color = "#9495A5";
+                table3.style.color = "#9495A5";
+                
+                // Cache ou affiche les éléments
+                parent.style.display = "none";
+                alltable.style.display = "flex";
+                completetable.style.display = "none";
+                
+                // Récupère tous les éléments avec une case à cocher
+                let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
+                
+                // Crée un tableau pour les éléments non cochés
+                let activetable = [];
+            
+                checkboxe.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
+                        activetable.push(checkbox.closest('.Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
+                    }
+                });
+            
+                // Cache tous les éléments et affiche uniquement ceux non cochés
+                document.querySelectorAll('.Element').forEach(item => {
+                    item.style.display = 'none'; // Cache tous les éléments
+                });
+            
+                // Affiche uniquement les éléments non cochés
+                activetable.forEach(item => {
+                    item.style.display = 'block'; // Affiche les éléments non cochés
+                });
+            });
+            
+
+
              });
     /////////////////////////////////////////////////////////
             //tableau all
@@ -323,44 +357,6 @@ input.addEventListener('keydown', function (event) {
 
 
            
-            
-    /////////////////////////////////////////////////////////////////
-            //table active
-          
-            table2.addEventListener("click", () => {
-                // Change la couleur des tables
-                table2.style.color = "#3A7CFD";
-                table1.style.color = "#9495A5";
-                table3.style.color = "#9495A5";
-                
-                // Cache ou affiche les éléments
-                parent.style.display = "none";
-                alltable.style.display = "flex";
-                completetable.style.display = "none";
-                
-                // Récupère tous les éléments avec une case à cocher
-                let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
-                
-                // Crée un tableau pour les éléments non cochés
-                let activetable = [];
-            
-                checkboxe.forEach(checkbox => {
-                    if (!checkbox.checked) {
-                        // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
-                        activetable.push(checkbox.closest('.Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
-                    }
-                });
-            
-                // Cache tous les éléments et affiche uniquement ceux non cochés
-                document.querySelectorAll('.Element').forEach(item => {
-                    item.style.display = 'none'; // Cache tous les éléments
-                });
-            
-                // Affiche uniquement les éléments non cochés
-                activetable.forEach(item => {
-                    item.style.display = 'block'; // Affiche les éléments non cochés
-                });
-            });
             
 
 
