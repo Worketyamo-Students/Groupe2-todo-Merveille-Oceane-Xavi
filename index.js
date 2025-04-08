@@ -59,8 +59,11 @@ let check1 = document.getElementById('check1')
 
 let texte = document.getElementById('texte')
 let table1 = document.getElementById("table1")
+let table11 = document.getElementById("table11")
+
 let table2 = document.getElementById("table2")
 let table3 = document.getElementById("table3")
+let table31 = document.getElementById("table31")
 let alltable = document.getElementById("allTable")
 //let alltable1 = document.getElementById("allTable1")
 let compte = document.getElementById("compte")
@@ -247,7 +250,7 @@ input.addEventListener('keydown', function (event) {
                       parent.style.display="none";
                      alltable.style.display="flex";
                      all.style.display="none";
-                     categories.style.display="flex"
+                     
                      activetable.style.display="none"
                      // Changer les couleurs des tables lors du clic
                      table3.style.color = "#3A7CFD";
@@ -278,7 +281,65 @@ input.addEventListener('keydown', function (event) {
 
                  previousClone = completetable;
                   });
-           
+           /////desktop
+           table31.addEventListener('click', (a) => {
+
+            if (previousClone !== null) {
+                previousClone.remove();
+            }
+                 
+             ///clear completed
+             suppression2.addEventListener("click", function() {
+                // Sélectionner toutes les cases à cocher
+                let checkboxes = document.querySelectorAll('.select'); 
+            
+                // Boucle à travers toutes les cases à cocher
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        // Si la case est cochée, on supprime l'élément parent
+                        let elementToRemove = checkbox.closest('.Element'); 
+                        if (elementToRemove) {
+                            elementToRemove.remove(); // Supprime l'élément
+                        }
+                    }
+                });
+            })
+                 // Si un clone précédent existe, on le supprime
+          
+              parent.style.display="none";
+             alltable.style.display="flex";
+             all.style.display="none";
+             categories.style.display="flex"
+             activetable.style.display="none"
+             // Changer les couleurs des tables lors du clic
+             table3.style.color = "#3A7CFD";
+             table2.style.color = "#9495A5";
+             table1.style.color = "#9495A5";
+     
+             // Mettre à jour le nombre d'items
+             compte1.innerHTML = count + " " + "items left";
+     
+             // Clone l'élément sélectionné et l'ajoute au tableau complet
+             let completetable=document.getElementById("completetable")
+              completetable = newElement.cloneNode(true);
+             console.log(completetable);
+     
+             // Ajouter l'élément cloné à la table
+             category.style.display = "flex";
+             alltable.insertBefore(completetable, category);
+             alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
+     
+             table3.addEventListener("click" ,function(){
+
+                 alltable.removeChild(completetable)
+                
+
+             })
+
+
+
+         previousClone = completetable;
+          });
 
         /////////////////////////////////////////////////////////////////
             //table active
@@ -327,6 +388,48 @@ input.addEventListener('keydown', function (event) {
             let previousClone = null; 
 
                     table1.addEventListener('click', () => {
+                        completetable.style.display="none";
+
+                        // Si un clone précédent existe, on le supprime
+                        if (previousClone !== null) {
+                            previousClone.remove();
+                        }
+                        
+                         all.style.display="flex";
+                         completetable.style.display="none"
+                        // Mise à jour de l'affichage du nombre d'éléments restants
+                        compte1.innerHTML = count + " " + "items left";
+                        
+                        // Cloner l'élément
+
+                         all = newElement.cloneNode(true); // Clonage de l'élément avec ses enfants
+
+                       
+                        console.log(all);
+
+                        // Ajouter le clone au tableau 
+                        alltable.appendChild(all);
+                        
+                        // Afficher la catégorie 
+                        category.style.display = "flex";
+
+                        // Insérer le clone avant l'élément de catégorie 
+                        alltable.insertBefore(all, category);
+
+                        // Afficher le tableau et masquer le parent 
+                        alltable.style.display = "flex";
+                        parent.style.display = "none";
+                        //completetable.style.display="none"
+                        // Mettre à jour la référence du dernier clone
+                        previousClone = all;
+                        completetable.style.display="flex"
+                        // completetable.remove()
+                        all.addEventListener("click", ()=>{
+                            alltable.removeChild(completetable)
+                        })
+                    });
+                    ///desktop
+                    table11.addEventListener('click', () => {
                         completetable.style.display="none";
 
                         // Si un clone précédent existe, on le supprime
