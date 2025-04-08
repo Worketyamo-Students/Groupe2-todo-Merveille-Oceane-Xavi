@@ -59,7 +59,7 @@ let table1 = document.getElementById("table1")
 let table2 = document.getElementById("table2")
 let table3 = document.getElementById("table3")
 let alltable = document.getElementById("allTable")
-let alltable1 = document.getElementById("allTable1")
+//let alltable1 = document.getElementById("allTable1")
 let compte = document.getElementById("compte")
 let compte1 = document.getElementById("compte1")
 let select= document.getElementById("select")
@@ -68,6 +68,9 @@ let suppr =document.getElementById("suppr")
 let category = document.getElementById("category")
 let suppression= document.getElementById("suppression")
 let suppression2= document.getElementById("suppression2")
+let all=document.getElementById("all")
+
+let activetable=[]
 let count = 0;  //compteur
 const maxElement = 8; //max d'elements
 // let all=document.getElementById("all")
@@ -105,17 +108,19 @@ input.addEventListener('keydown', function (event) {
             count = count + 1;
             compte.innerHTML = count + " " + "items left"
             alltable.style.display="none"
+            all.style.display="none"
+            completetable.style.display="none"
 
 
             suppression2.addEventListener("click", function() {
                 // Sélectionner toutes les cases à cocher
-                let checkboxes = document.querySelectorAll('.select'); // Assurez-vous que les éléments à vérifier ont la classe "checkbox"
+                let checkboxes = document.querySelectorAll('.select'); 
             
                 // Boucle à travers toutes les cases à cocher
                 checkboxes.forEach(checkbox => {
                     if (checkbox.checked) {
                         // Si la case est cochée, on supprime l'élément parent
-                        let elementToRemove = checkbox.closest('.Element'); // Assurez-vous que '.item' est l'élément à supprimer
+                        let elementToRemove = checkbox.closest('.Element'); 
                         if (elementToRemove) {
                             elementToRemove.remove(); // Supprime l'élément
                         }
@@ -132,13 +137,13 @@ input.addEventListener('keydown', function (event) {
             
             suppression.addEventListener("click", function() {
                 // Sélectionner toutes les cases à cocher
-                let checkboxes = document.querySelectorAll('.select'); // Assurez-vous que les éléments à vérifier ont la classe "checkbox"
+                let checkboxes = document.querySelectorAll('.select'); 
             
                 // Boucle à travers toutes les cases à cocher
                 checkboxes.forEach(checkbox => {
                     if (checkbox.checked) {
                         // Si la case est cochée, on supprime l'élément parent
-                        let elementToRemove = checkbox.closest('.Element'); // Assurez-vous que '.item' est l'élément à supprimer
+                        let elementToRemove = checkbox.closest('.Element'); 
                         if (elementToRemove) {
                             elementToRemove.remove(); // Supprime l'élément
                         }
@@ -177,137 +182,147 @@ input.addEventListener('keydown', function (event) {
             parent.style.display = "flex"
 
 
-            //tableau all
-            let previousClone = null; // Variable pour garder la référence du dernier clone
 
-table1.addEventListener('click', () => {
-    // Si un clone précédent existe, on le supprime
-    if (previousClone !== null) {
-        previousClone.remove();
-    }
-
-    // Mise à jour de l'affichage du nombre d'éléments restants
-    compte1.innerHTML = count + " " + "items left";
-    
-    // Cloner l'élément
-    let all = newElement.cloneNode(true); // Clonage de l'élément avec ses enfants
-
-    console.log(all);
-
-    // Ajouter le clone au tableau 
-    alltable.appendChild(all);
-    
-    // Afficher la catégorie 
-    category.style.display = "flex";
-
-    // Insérer le clone avant l'élément de catégorie 
-    alltable.insertBefore(all, category);
-
-    // Afficher le tableau et masquer le parent 
-    alltable.style.display = "flex";
-    parent.style.display = "none";
-    //completetable.style.display="none"
-    // Mettre à jour la référence du dernier clone
-    previousClone = all;
-});
-
-            //cocher les elements
+             //cocher les elements
            
-            let active = false;  // Variable pour gérer l'état actif (sélectionné ou non)
+             let active = false;  // Variable pour gérer l'état actif (sélectionné ou non)
 
-            select.addEventListener("click", (e) => {
-                // Alterner l'état entre "coché" et "décoché"
-                active = !active;  // Inverse l'état à chaque clic
-            
-                if (active) {
-                    // Lors du clic, l'élément devient sélectionné
-                    checki.style.display = "flex";  // Afficher l'icône de coche
-                    select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100%)";  // Changer le fond du bouton
-                    textElement.style.textDecoration = "line-through";  // Barrer le texte
-                    textElement.style.color = "#B0B0B0";  // Change la couleur du texte pour un aspect "complété"
-                } else {
-                    // Lors du clic, l'élément devient désélectionné
-                    checki.style.display = "none";  // Masquer l'icône de coche
-                    select.style.backgroundImage = "none";  // Réinitialiser le fond du bouton
-                    textElement.style.textDecoration = "none";  // Retirer le barré du texte
-                    textElement.style.color = "";  // Réinitialiser la couleur du texte
-                }
+             select.addEventListener("click", (e) => {
+                 // Alterner l'état entre "coché" et "décoché"
+                 active = !active;  // Inverse l'état à chaque clic
+             
+                 if (active) {
+                     // Lors du clic, l'élément devient sélectionné
+                     checki.style.display = "flex";  // Afficher l'icône de coche
+                     select.style.backgroundImage = "linear-gradient(to bottom, #3710BD 0, #A42395 100%)";  // Changer le fond du bouton
+                     textElement.style.textDecoration = "line-through";  // Barrer le texte
+                     textElement.style.color = "#B0B0B0";  // Change la couleur du texte pour un aspect "complété"
+                 } else {
+                     // Lors du clic, l'élément devient désélectionné
+                     checki.style.display = "none";  // Masquer l'icône de coche
+                     select.style.backgroundImage = "none";  // Réinitialiser le fond du bouton
+                     textElement.style.textDecoration = "none";  // Retirer le barré du texte
+                     textElement.style.color = "";  // Réinitialiser la couleur du texte
+                 }
+ 
+ 
+ 
+ 
+         ///////////////////////////////////////////////////////////////////////////////////////
+                 // Ajout à "table3" quand sélectionné
+                 table3.addEventListener('click', (a) => {
 
+                         // Si un clone précédent existe, on le supprime
+                  if (previousClone !== null) {
+                          previousClone.remove();
+                      }
+                      parent.style.display="none";
+                     alltable.style.display="flex";
+                     all.style.display="none";
+                     // Changer les couleurs des tables lors du clic
+                     table3.style.color = "#3A7CFD";
+                     table2.style.color = "#9495A5";
+                     table1.style.color = "#9495A5";
+             
+                     // Mettre à jour le nombre d'items
+                     compte1.innerHTML = count + " " + "items left";
+             
+                     // Clone l'élément sélectionné et l'ajoute au tableau complet
+                     let completetable=document.getElementById("completetable")
+                      completetable = newElement.cloneNode(true);
+                     console.log(completetable);
+             
+                     // Ajouter l'élément cloné à la table
+                     category.style.display = "flex";
+                     alltable.insertBefore(completetable, category);
+                     alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
+             
+                     table3.addEventListener("click" ,function(){
+ 
+                         alltable.removeChild(completetable)
+                         alltable.removeChild(all)
+                         alltable.removeChild(all)
+ 
+                     })
+ 
+                     // Option pour supprimer l'élément cloné
+                     let suppr = completetable.querySelector(".suppr");
+                     suppr.addEventListener("click", () => {
+                         alltable.removeChild(completetable);  // Supprimer l'élément du tableau
+                         
+ 
+                     
+                     });
+ 
+                     
+                     suppression.addEventListener("click", function() {
+                         // Sélectionner toutes les cases à cocher
+                         let checkboxes = document.querySelectorAll('.select'); // Assurez-vous que les éléments à vérifier ont la classe "checkbox"
+                     
+                         // Boucle à travers toutes les cases à cocher
+                         checkboxes.forEach(checkbox => {
+                             if (checkbox.checked) {
+                                 // Si la case est cochée, on supprime l'élément parent
+                                 let elementToRemove = checkbox.closest('.Element'); // Assurez-vous que '.item' est l'élément à supprimer
+                                 if (elementToRemove) {
+                                     elementToRemove.remove(); // Supprime l'élément
+                                 }
+                             }
+                         });
+                     })
+ 
 
+                 previousClone = completetable;
+                  });
+             });
+    /////////////////////////////////////////////////////////
+            //tableau all
+            let previousClone = null; 
 
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-                // Ajout à "table3" quand sélectionné
-                table3.addEventListener('click', (a) => {
+                    table1.addEventListener('click', () => {
+                        completetable.style.display="none";
 
                         // Si un clone précédent existe, on le supprime
-                 if (previousClone !== null) {
-                         previousClone.remove();
-                     }
-                     parent.style.display = "none";
-                    alltable.style.display="flex";
-                    // Changer les couleurs des tables lors du clic
-                    table3.style.color = "#3A7CFD";
-                    table2.style.color = "#9495A5";
-                    table1.style.color = "#9495A5";
-            
-                    // Mettre à jour le nombre d'items
-                    compte1.innerHTML = count + " " + "items left";
-            
-                    // Clone l'élément sélectionné et l'ajoute au tableau complet
-                    let completetable = newElement.cloneNode(true);
-                    console.log(completetable);
-            
-                    // Ajouter l'élément cloné à la table
-                    category.style.display = "flex";
-                    alltable.insertBefore(completetable, category);
-                    alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
-            
-                    suppression.addEventListener("click" ,function(){
-
-                        alltable.removeChild(completetable)
-
-                    })
-
-                    // Option pour supprimer l'élément cloné
-                    let suppr = completetable.querySelector(".suppr");
-                    suppr.addEventListener("click", () => {
-                        alltable.removeChild(completetable);  // Supprimer l'élément du tableau
+                        if (previousClone !== null) {
+                            previousClone.remove();
+                        }
                         
-
-                    
-                    });
-
-                    
-                    suppression.addEventListener("click", function() {
-                        // Sélectionner toutes les cases à cocher
-                        let checkboxes = document.querySelectorAll('.select'); // Assurez-vous que les éléments à vérifier ont la classe "checkbox"
-                    
-                        // Boucle à travers toutes les cases à cocher
-                        checkboxes.forEach(checkbox => {
-                            if (checkbox.checked) {
-                                // Si la case est cochée, on supprime l'élément parent
-                                let elementToRemove = checkbox.closest('.Element'); // Assurez-vous que '.item' est l'élément à supprimer
-                                if (elementToRemove) {
-                                    elementToRemove.remove(); // Supprime l'élément
-                                }
-                            }
-                        });
-                    })
-
-
-
-
+                         all.style.display="flex";
+                         completetable.style.display="none"
+                        // Mise à jour de l'affichage du nombre d'éléments restants
+                        compte1.innerHTML = count + " " + "items left";
                         
+                        // Cloner l'élément
+
+                         all = newElement.cloneNode(true); // Clonage de l'élément avec ses enfants
+
+                       
+                        console.log(all);
+
+                        // Ajouter le clone au tableau 
+                        alltable.appendChild(all);
+                        
+                        // Afficher la catégorie 
+                        category.style.display = "flex";
+
+                        // Insérer le clone avant l'élément de catégorie 
+                        alltable.insertBefore(all, category);
 
                         // Afficher le tableau et masquer le parent 
-                alltable.style.display = "flex";
-                 parent.style.display = "none";
-                 //completetable.style.display="none"
-                 // Mettre à jour la référence du dernier clone
-                previousClone = all;
-                 });
-            });
+                        alltable.style.display = "flex";
+                        parent.style.display = "none";
+                        //completetable.style.display="none"
+                        // Mettre à jour la référence du dernier clone
+                        previousClone = all;
+                        completetable.style.display="flex"
+                        // completetable.remove()
+                        all.addEventListener("click", ()=>{
+                            alltable.removeChild(completetable)
+                        })
+                    });
+
+
+           
             
     /////////////////////////////////////////////////////////////////
             //table active
@@ -327,12 +342,12 @@ table1.addEventListener('click', () => {
                 let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
                 
                 // Crée un tableau pour les éléments non cochés
-                let nonCheckedItems = [];
+                let activetable = [];
             
                 checkboxe.forEach(checkbox => {
                     if (!checkbox.checked) {
                         // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
-                        nonCheckedItems.push(checkbox.closest('.Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
+                        activetable.push(checkbox.closest('.Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
                     }
                 });
             
@@ -342,7 +357,7 @@ table1.addEventListener('click', () => {
                 });
             
                 // Affiche uniquement les éléments non cochés
-                nonCheckedItems.forEach(item => {
+                activetable.forEach(item => {
                     item.style.display = 'block'; // Affiche les éléments non cochés
                 });
             });
