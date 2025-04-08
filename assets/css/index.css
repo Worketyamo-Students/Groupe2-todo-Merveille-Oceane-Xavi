@@ -20,3 +20,10 @@
     --bleu: #3A7CFD;
  
 }
+
+@media screen and ( width<400px) {
+    .categories{
+      display:none;
+    }
+    
+}

@@ -44,13 +44,16 @@ mode.onclick = function () {
     }
 
 }
+
 //implementations des evenements
 
 let input = document.getElementById('input')
 let check = document.getElementById('check')
 let checkimg = document.getElementById('checkimg')
+
 let parent = document.getElementById('parent')
-let categorie = document.getElementById("categorie")
+
+let categories = document.getElementById("categories")
 let croix = document.getElementById('croix')
 let check1 = document.getElementById('check1')
 
@@ -101,6 +104,13 @@ input.addEventListener('keydown', function (event) {
         //verification pour une longueur d'au moins 5 carateres
         if (contenu.length >= 5) {
             parent.style.display = "flex";
+            
+            // if (window.innerWidth > 768 ) {
+            //     categories.style.display = "flex";
+            // }
+                //categories.style.display = "none";
+            
+           
             //clonage
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex";
@@ -112,21 +122,21 @@ input.addEventListener('keydown', function (event) {
             completetable.style.display="none"
 
 
-            suppression2.addEventListener("click", function() {
-                // Sélectionner toutes les cases à cocher
-                let checkboxes = document.querySelectorAll('.select'); 
+            // suppression2.addEventListener("click", function() {
+            //     // Sélectionner toutes les cases à cocher
+            //     let checkboxes = document.querySelectorAll('.select'); 
             
-                // Boucle à travers toutes les cases à cocher
-                checkboxes.forEach(checkbox => {
-                    if (checkbox.checked) {
-                        // Si la case est cochée, on supprime l'élément parent
-                        let elementToRemove = checkbox.closest('.Element'); 
-                        if (elementToRemove) {
-                            elementToRemove.remove(); // Supprime l'élément
-                        }
-                    }
-                });
-            })
+            //     // Boucle à travers toutes les cases à cocher
+            //     checkboxes.forEach(checkbox => {
+            //         if (checkbox.checked) {
+            //             // Si la case est cochée, on supprime l'élément parent
+            //             let elementToRemove = checkbox.closest('.Element'); 
+            //             if (elementToRemove) {
+            //                 elementToRemove.remove(); // Supprime l'élément
+            //             }
+            //         }
+            //     });
+           // })
             console.log(count)
             if (textElement) {
                 textElement.innerHTML = contenu;
@@ -212,13 +222,32 @@ input.addEventListener('keydown', function (event) {
                  // Ajout à "table3" quand sélectionné
                  table3.addEventListener('click', (a) => {
 
+                    if (previousClone !== null) {
+                        previousClone.remove();
+                    }
+                         
+                     ///clear completed
+                     suppression2.addEventListener("click", function() {
+                        // Sélectionner toutes les cases à cocher
+                        let checkboxes = document.querySelectorAll('.select'); 
+                    
+                        // Boucle à travers toutes les cases à cocher
+                        checkboxes.forEach(checkbox => {
+                            if (checkbox.checked) {
+                                // Si la case est cochée, on supprime l'élément parent
+                                let elementToRemove = checkbox.closest('.Element'); 
+                                if (elementToRemove) {
+                                    elementToRemove.remove(); // Supprime l'élément
+                                }
+                            }
+                        });
+                    })
                          // Si un clone précédent existe, on le supprime
-                  if (previousClone !== null) {
-                          previousClone.remove();
-                      }
+                  
                       parent.style.display="none";
                      alltable.style.display="flex";
                      all.style.display="none";
+                     categories.style.display="flex"
                      activetable.style.display="none"
                      // Changer les couleurs des tables lors du clic
                      table3.style.color = "#3A7CFD";
@@ -244,27 +273,12 @@ input.addEventListener('keydown', function (event) {
                         
  
                      })
- 
-                     ///clear completed
-                     suppression.addEventListener("click", function() {
-                         // Sélectionner toutes les cases à cocher
-                         let checkboxes = document.querySelectorAll('.select'); 
-                     
-                         // Boucle à travers toutes les cases à cocher
-                         checkboxes.forEach(checkbox => {
-                             if (checkbox.checked) {
-                                 // Si la case est cochée, on supprime l'élément parent
-                                 let elementToRemove = checkbox.closest('.Element'); 
-                                 if (elementToRemove) {
-                                     elementToRemove.remove(); // Supprime l'élément
-                                 }
-                             }
-                         });
-                     })
+
  
 
                  previousClone = completetable;
                   });
+           
 
         /////////////////////////////////////////////////////////////////
             //table active
@@ -279,6 +293,7 @@ input.addEventListener('keydown', function (event) {
                 parent.style.display = "none";
                 alltable.style.display = "flex";
                 completetable.style.display = "none";
+                categories.style.display="flex"
                 
                 // Récupère tous les éléments avec une case à cocher
                 let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
@@ -357,7 +372,7 @@ input.addEventListener('keydown', function (event) {
            
             
 
-
+                
         } else {
             alert('Chaine est tres courte')
         }
