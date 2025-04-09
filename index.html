@@ -41,14 +41,14 @@
 
         <div  class="flex gap-2 mt-10 w-full h-[48px] bg-white  rounded-[5px] p-3 " id="formulaire">
 
-            <div type="keydown" class=" w-7 h-5 md:w-5 md:h-5 rounded-full border border-barre flex justify-center items-center " id="check">
+            <div type="keydown" class=" w-5 h-5 md:w-5 md:h-5 rounded-full border border-barre flex justify-center items-center " id="check">
                 <img src="assets/img/vrai.svg" class="hidden" id="checkimg"/>
             </div>
             <input type="text" class="w-full h-5 font-josefin text-xs text-texte" placeholder="Create a new todo…" id="input">
 
         </div>
         <!-- section all -->
-        <div  class="hidden flex flex-col gap-1 bg-white w-full rounded-[5px] pt-4 mt-6 shadow-xl  lg:mt-12" id="allTable">
+        <div  class="hidden flex flex-col gap-1 bg-white w-full rounded-[5px] pt-4 mt-6 shadow-xl  lg:mt-12 lg:mt-4" id="allTable">
             <div  class="hidden" id="all"></div>
             <div  class="hidden" id="completetable"></div>
             <div  class="hidden" id="activetable"></div>
@@ -116,11 +116,11 @@
 
         </section>
 
-        <div class="hidden lg:flex lg:justify-between lg:items-center lg:p-4 bg-white shadow-xl " style="color: #9495A5;" id="categories">
+        <div class="hidden flex justify-between lg:flex lg:justify-between lg:items-center lg:p-4 bg-white shadow-xl  " style="color: #9495A5;" id="categories">
             <div class="">
-                <p>5 items left</p>
+                <p id="nombre"></p>
             </div>
-            <div class="lg:flex lg:gap-6 capitalize " >
+            <div class="lg:flex lg:gap-6 capitalize hidden lg:block " >
                 <a href="#" class="text-bleu font-[700] text-sm font-josefin" id="table11">All</a>
                 <a href="#" class="text-texte font-[700] text-sm font-josefin" id="table21">Active</a>
                 <a href="#" class="text-texte font-[700] text-sm font-josefin" id="table31">Completed</a>
@@ -141,8 +141,9 @@
             <a href="#" class="text-texte font-[700] text-sm font-josefin" id="table2">Active</a>
             <a href="#" class="text-texte font-[700] text-sm font-josefin" id="table3">Completed</a>
         </div>
-    </section>
+        <div class="flex justify-center items-center pt-60" style="color: #9495A5;">Drag and drop to reorder list</div>
 
+    </section>
 
     <script src="index.js"></script>
 </body>

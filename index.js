@@ -17,12 +17,13 @@ mode.onclick = function () {
         body.style.backgroundColor = " #25273D"
         input.style.color = " #4D5067"
         check.style.borderColor = " #4D5067"
-        categorie.style.color = " #5B5E7E"
+        categories.style.backgroundColor = "#25273D"
         // categorie.style.backgroundColor=" #25273D"
         foot.style.color = " #5B5E7E";
         foot.style.background = "  #25273D"
         //  categorie.style.background ="#25273D";
         parent.style.background = " #25273D";
+
         element.style.color = " #C8CBE7";
         alltable.style.background = " #25273D"
         completetable.style.background = " #25273D"
@@ -34,6 +35,8 @@ mode.onclick = function () {
         foot.style.background = " white"
         form.style.backgroundColor = "white";
         parent.style.background = " white";
+        categories.style.backgroundColor = "white"
+
         foot.style.color = " #9495A5";
         check.style.borderColor = " #9495A5 "
         input.style.color = " #9495A5  "
@@ -67,6 +70,7 @@ let table31 = document.getElementById("table31")
 let alltable = document.getElementById("allTable")
 //let alltable1 = document.getElementById("allTable1")
 let compte = document.getElementById("compte")
+let nombre = document.getElementById("nombre")
 let compte1 = document.getElementById("compte1")
 let select= document.getElementById("select")
 let suppr =document.getElementById("suppr")
@@ -120,6 +124,8 @@ input.addEventListener('keydown', function (event) {
             let textElement = newElement.querySelector('#texte');
             count = count + 1;
             compte.innerHTML = count + " " + "items left"
+            nombre.innerHTML = count + " " + "items left"
+
             alltable.style.display="none"
             all.style.display="none"
             completetable.style.display="none"
