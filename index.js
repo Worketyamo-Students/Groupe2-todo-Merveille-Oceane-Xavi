@@ -57,6 +57,8 @@ let checkimg = document.getElementById('checkimg')
 let parent = document.getElementById('parent')
 
 let categories = document.getElementById("categories")
+let categorie = document.getElementById("categorie")
+
 let croix = document.getElementById('croix')
 let check1 = document.getElementById('check1')
 
@@ -274,6 +276,8 @@ input.addEventListener('keydown', function (event) {
                      // Ajouter l'élément cloné à la table
                      category.style.display = "flex";
                      alltable.insertBefore(completetable, category);
+                     alltable.insertBefore(completetable, categorie);
+                    categories.style.display = "none"
                      alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
              
                      table3.addEventListener("click" ,function(){
@@ -331,7 +335,7 @@ input.addEventListener('keydown', function (event) {
              console.log(completetable);
      
              // Ajouter l'élément cloné à la table
-             category.style.display = "flex";
+             category.style.display = "none";
              alltable.insertBefore(completetable, category);
              alltable.appendChild(completetable);  // Ajoute l'élément cloné à la fin du tableau
      
@@ -363,7 +367,7 @@ input.addEventListener('keydown', function (event) {
                 categories.style.display="flex"
                 
                 // Récupère tous les éléments avec une case à cocher
-                let checkboxe = document.querySelectorAll('.select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
+                let checkboxe = document.querySelectorAll('#select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
                 
                 // Crée un tableau pour les éléments non cochés
                 
@@ -371,18 +375,19 @@ input.addEventListener('keydown', function (event) {
                 checkboxe.forEach(checkbox => {
                     if (!checkbox.checked) {
                         // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
-                        activetable.push(checkbox.closest('.Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
+                        activetable = []
+                        activetable.push(checkbox.closest('#Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
                     }
                 });
             
                 // Cache tous les éléments et affiche uniquement ceux non cochés
-                document.querySelectorAll('.Element').forEach(item => {
+                document.querySelectorAll('#Element').forEach((item)=> {
                     item.style.display = 'none'; // Cache tous les éléments
                 });
             
                 // Affiche uniquement les éléments non cochés
-                activetable.forEach(item => {
-                    item.style.display = 'block'; // Affiche les éléments non cochés
+                Object.keys(activetable).forEach((item) => {
+                    activetable[item].style.display = 'flex'; // Affiche les éléments non cochés
                 });
             });
             
