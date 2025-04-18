@@ -367,36 +367,30 @@ input.addEventListener('keydown', function (event) {
                 categories.style.display="flex"
                 activetable = []
 
-                let choix = document.getElementById("select")
-                choix.forEach (check => {
-                    if (choix.checked){
-                        
-                    }
-                })
                 
-                // // Récupère tous les éléments avec une case à cocher
-                // let checkboxe = document.querySelectorAll('#select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
+                // Récupère tous les éléments avec une case à cocher
+                let checkboxe = document.querySelectorAll('#select'); // Assurez-vous que les éléments à filtrer ont la classe "checkbox"
                 
-                // // Crée un tableau pour les éléments non cochés
+                // Crée un tableau pour les éléments non cochés
         
             
-                // checkboxe.forEach(checkbox => {
-                //     if (!checkbox.checked) {
-                //         // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
+                checkboxe.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        // Si la case n'est pas cochée, ajoute l'élément correspondant à la liste
                         
-                //         activetable.push(checkbox.closest('#Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
-                //     }
-                // });
+                        activetable.push(checkbox.closest('#Element')); // Assurez-vous que '.item' est le parent ou l'élément que vous voulez afficher
+                    }
+                });
             
-                // // Cache tous les éléments et affiche uniquement ceux non cochés
-                // document.querySelectorAll('#Element').forEach((item)=> {
-                //     item.style.display = 'none'; // Cache tous les éléments
-                // });
+                // Cache tous les éléments et affiche uniquement ceux non cochés
+                document.querySelectorAll('#Element').forEach((item)=> {
+                    item.style.display = 'none'; // Cache tous les éléments
+                });
             
-                // // Affiche uniquement les éléments non cochés
-                // Object.keys(activetable).forEach((item) => {
-                //     activetable[item].style.display = "flex"; // Affiche les éléments non cochés
-                // });
+                // Affiche uniquement les éléments non cochés
+                Object.keys(activetable).forEach((item) => {
+                    activetable[item].style.display = "flex"; // Affiche les éléments non cochés
+                });
             });
             
 
